@@ -9,19 +9,19 @@ export async function POST(req) {
 
     // Configure your SMTP transporter
     const transporter = nodemailer.createTransport({
-      host: "smtp.hostinger.com", // or Gmail SMTP
+      host: process.env.EMAIL_HOST, // or Gmail SMTP
       port: 465,
       secure: true,
       auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       },
     });
 
     // Compose email
     const mailOptions = {
-      from: `"${name}" <${process.env.SMTP_USER}>`,
-      to: process.env.RECEIVER_EMAIL,
+      from: `"${name}" <${email}>`,
+      to: "beglobal025@gmail.com",
       subject: subject || "New Contact Form Message",
       html: `
         <p><strong>Name:</strong> ${name}</p>

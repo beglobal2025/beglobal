@@ -36,10 +36,10 @@ export default function Contact() {
   }, [plan]);
 
   async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    setStatus("This form is currently inactive.");
-    // setStatus("Sending...");
+  e.preventDefault();
+  setStatus("Sending..."); // show loader
 
+  try {
     const res = await fetch("/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -47,13 +47,18 @@ export default function Contact() {
     });
 
     const data = await res.json();
+
     if (data.success) {
-      setStatus("✅ Message sent successfully!");
-      setFormData({ name: "", email: "", phone: "", message: "",subject:"" });
+      setStatus("✅ Thanks for reaching us, we will get back to you shortly!");
+      setFormData({ name: "", email: "", phone: "", message: "", subject: "" });
     } else {
-      setStatus("❌ Failed to send message.");
+      setStatus("❌ Failed to reach, try again.");
     }
+  } catch (error) {
+    setStatus("❌ ailed to reach, try again.");
   }
+}
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -83,6 +88,16 @@ export default function Contact() {
             {/* Contact Form */}
             <div className="bg-white rounded-2xl shadow-xl p-8">
               <h2 className="text-3xl font-bold text-gray-900 mb-8">Send Us a Message</h2>
+              {/* Status Message */}
+              {/* Status Message */}
+              {status && (
+                <div
+                  className={`mb-6 p-4 rounded-lg text-white ${status.includes("✅") ? "bg-green-500" : status.includes("❌") ? "bg-red-500" : "bg-blue-500"
+                    }`}
+                >
+                  {status}
+                </div>
+              )}
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
