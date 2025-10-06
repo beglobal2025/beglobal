@@ -1,52 +1,74 @@
 import { Palette, Smartphone, Monitor, ArrowRight, Check } from 'lucide-react';
+import Link from "next/link";
 
 const services = [
   {
-    title: 'Creative Design',
-    icon: Palette,
-    description: 'Transform your brand with stunning visual identity and creative solutions',
+    title: 'Silver (₹29,999)',
+    description: 'A starter package to showcase your products and generate enquiries.',
     features: [
-      'Brand Identity & Logo Design',
-      'Marketing Material Design',
-      'Social Media Graphics',
-      'Print Design Solutions',
-      'Creative Campaign Development',
-      'Brand Guidelines Creation'
+      'Mobile-friendly website',
+      'Admin dashboard for easy management',
+      'Multiple product images upload',
+      'Product catalogue with enquiry button (no direct checkout)',
+      'Contact us form',
+      'Free SSL certificate',
+      '15 days of free support'
     ],
-    gradient: 'from-blue-600 to-blue-700',
-    iconBg: 'from-blue-500 to-blue-600'
+    gradient: 'from-gray-600 to-gray-700',
+    iconBg: 'from-gray-500 to-gray-600'
   },
   {
-    title: 'Mobile Apps Design',
-    icon: Smartphone,
-    description: 'Create engaging mobile experiences that drive user engagement and growth',
+    title: 'Gold (₹59,999)',
+    description: 'A complete eCommerce solution to sell your products online.',
     features: [
-      'iOS & Android App Design',
-      'User Experience (UX) Design',
-      'Interactive Prototyping',
-      'App Store Optimization',
-      'Cross-Platform Solutions',
-      'Performance Optimization'
+      'Attractive, mobile-friendly eCommerce website',
+      'Admin dashboard with order management',
+      'Quick Login/Sign-up with OTP',
+      'Multiple product images upload',
+      'Integrated payment gateway setup',
+      'Contact us form',
+      'Free SSL certificate',
+      '1 year free domain & hosting',
+      '15 days of free support'
     ],
     gradient: 'from-slate-600 to-slate-700',
     iconBg: 'from-slate-500 to-slate-600'
   },
   {
-    title: 'Website Design',
-    icon: Monitor,
-    description: 'Build professional websites that convert visitors into customers',
+    title: 'Diamond (₹79,999)',
+    description: 'Advanced eCommerce with powerful features to boost sales and visibility.',
     features: [
-      'Responsive Web Design',
-      'E-commerce Development',
-      'SEO Optimization',
-      'Content Management Systems',
-      'Performance & Speed Optimization',
-      'Ongoing Maintenance & Support'
+      'Premium, mobile-friendly eCommerce website',
+      'Admin dashboard with advanced controls',
+      'Quick Login/Sign-up with OTP',
+      'Multiple product images upload',
+      'Integrated payment gateway setup',
+      'Wishlist',
+      'Rating and reviews',
+      'Product QR code for easy access',
+      'Contact us form',
+      'Free SSL certificate',
+      '1 year free domain & hosting',
+      '1 month of free support',
+      '2 months of SEO optimization for better ranking'
     ],
-    gradient: 'from-gray-600 to-gray-700',
-    iconBg: 'from-gray-500 to-gray-600'
-  }
+    gradient: 'from-blue-600 to-blue-700',
+    iconBg: 'from-blue-500 to-blue-600'
+  },
+  {
+    title: 'Platinum (Custom Pricing)',
+    description: 'Tailor-made digital solutions designed to match your unique business goals.',
+    features: [
+      'Fully customizable features',
+      'Scalable solutions for growing businesses',
+      'Custom integrations & add-ons',
+      'Personalized support & consultation'
+    ],
+    gradient: 'from-purple-600 to-purple-700',
+    iconBg: 'from-purple-500 to-purple-600'
+  },
 ];
+
 
 export default function Services() {
   return (
@@ -66,7 +88,7 @@ export default function Services() {
       {/* Services Grid */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
             {services.map((service, index) => (
               <div
                 key={service.title}
@@ -74,9 +96,9 @@ export default function Services() {
               >
                 {/* Header */}
                 <div className={`bg-gradient-to-br ${service.gradient} p-8 text-white`}>
-                  <div className={`bg-gradient-to-br ${service.iconBg} w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  {/* <div className={`bg-gradient-to-br ${service.iconBg} w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                     <service.icon className="h-8 w-8 text-white" />
-                  </div>
+                  </div> */}
                   <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
                   <p className="text-lg opacity-90">{service.description}</p>
                 </div>
@@ -94,9 +116,23 @@ export default function Services() {
                     ))}
                   </ul>
 
-                  <button className={`w-full bg-gradient-to-r ${service.gradient} text-white py-4 px-6 rounded-xl font-bold text-lg hover:shadow-lg transition-all duration-300 group-hover:scale-105 flex items-center justify-center space-x-2`}>
-                    <span>Learn More</span>
-                    <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+
+                  <button
+                    className={`w-full bg-gradient-to-r ${service.gradient} text-white py-4 px-6 rounded-xl font-bold text-lg hover:shadow-lg transition-all duration-300 group-hover:scale-105 flex items-center justify-center space-x-2`}
+                  >
+                    <Link
+                      href={{
+                        pathname: "/contact",
+                        query: {
+                          plan: service.title,          // e.g. "Silver (₹2,999)"
+                          description: service.description
+                        }
+                      }}
+                      className="flex items-center space-x-2 w-full h-full justify-center"
+                    >
+                      <span>Know More</span>
+                      <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                    </Link>
                   </button>
                 </div>
               </div>

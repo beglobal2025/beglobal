@@ -1,13 +1,17 @@
+'use client';
 import { Globe, TrendingUp, Users, Zap } from 'lucide-react';
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
   return (
-    <div className="min-h-screen">
+    <div className="w-full">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 text-white overflow-hidden">
+      <section className="w-screen relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 text-white overflow-hidden">
+
         <div className="absolute inset-0 bg-black opacity-20"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-slate-600/20"></div>
-        
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
           <div className="text-center">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
@@ -20,11 +24,11 @@ export default function Home() {
               Transform your local business into a global powerhouse with our cutting-edge digital solutions and expert guidance.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl transition-all duration-300 hover:scale-105">
+              <button onClick={() => router.push("/prerequisite")} className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl transition-all duration-300 hover:scale-105">
                 Start Your Journey
               </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-blue-900 transition-all duration-300">
-                Learn More
+              <button onClick={() => router.push("/contact")} className="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-blue-900 transition-all duration-300">
+                Contact Us
               </button>
             </div>
           </div>
@@ -97,7 +101,7 @@ export default function Home() {
           <p className="text-xl mb-12 max-w-2xl mx-auto">
             Join thousands of businesses that have successfully expanded internationally with BeGlobal
           </p>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-full text-lg font-bold hover:shadow-xl transition-all duration-300 hover:scale-105">
+          <button onClick={() => router.push("/prerequisite")} className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-full text-lg font-bold hover:shadow-xl transition-all duration-300 hover:scale-105">
             Get Started Today
           </button>
         </div>

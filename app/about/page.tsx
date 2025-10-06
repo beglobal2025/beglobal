@@ -1,6 +1,9 @@
-import { Target, Award, Users, Globe } from 'lucide-react';
+'use client';
+import { Target, Award, Users, Globe, Phone } from 'lucide-react';
+import { useRouter } from "next/navigation";
 
 export default function About() {
+  const router = useRouter();
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
@@ -27,7 +30,7 @@ export default function About() {
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                 Our team combines years of experience in web development, mobile app creation, and creative design to deliver solutions that don't just look great, but drive real business results in global markets.
               </p>
-              <div className="grid grid-cols-2 gap-6">
+              {/* <div className="grid grid-cols-2 gap-6">
                 <div className="text-center p-6 bg-gray-50 rounded-xl">
                   <div className="text-3xl font-bold text-blue-600 mb-2">500+</div>
                   <div className="text-gray-600">Projects Completed</div>
@@ -36,7 +39,7 @@ export default function About() {
                   <div className="text-3xl font-bold text-emerald-600 mb-2">50+</div>
                   <div className="text-gray-600">Countries Reached</div>
                 </div>
-              </div>
+              </div> */}
             </div>
             <div className="bg-slate-700 p-8 rounded-2xl text-white">
               <h3 className="text-2xl font-bold mb-6">Our Mission</h3>
@@ -118,8 +121,8 @@ export default function About() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center p-8">
-              <div className="bg-blue-600 text-white text-4xl font-bold w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                5+
+              <div className="bg-blue-600 text-white text-3xl font-bold w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                10+
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gray-900">Years of Experience</h3>
               <p className="text-gray-600">
@@ -129,7 +132,7 @@ export default function About() {
 
             <div className="text-center p-8">
               <div className="bg-slate-600 text-white text-4xl font-bold w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                24/7
+                  <Phone className="h-6 w-6 text-white" />
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gray-900">Support</h3>
               <p className="text-gray-600">
@@ -138,7 +141,7 @@ export default function About() {
             </div>
 
             <div className="text-center p-8">
-              <div className="bg-gray-600 text-white text-4xl font-bold w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="bg-gray-600 text-white text-2xl font-bold w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                 100%
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gray-900">Satisfaction</h3>
@@ -159,7 +162,7 @@ export default function About() {
           <p className="text-xl mb-12 max-w-2xl mx-auto">
             Let's work together to take your business to the next level
           </p>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-full text-lg font-bold hover:shadow-xl transition-all duration-300 hover:scale-105">
+          <button onClick={() => router.push("/contact")} className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-full text-lg font-bold hover:shadow-xl transition-all duration-300 hover:scale-105">
             Contact Us Today
           </button>
         </div>

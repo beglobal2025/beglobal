@@ -1,21 +1,59 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
+import { useSearchParams } from "next/navigation";
 
 export default function Contact() {
+  const [status, setStatus] = useState("");
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     subject: '',
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const params = useSearchParams();
+  const plan = params.get("plan");
+  const description = params.get("description");
+
+  console.log('Plan:', plan);
+  console.log('Description:', description);
+
+  // return (
+  //   <form>
+  //     <input type="text" value={plan || ""} readOnly className="border p-2 mb-4" />
+  //     <textarea value={description || ""} readOnly className="border p-2 mb-4" />
+  //     {/* other contact form fields */}
+  //   </form>
+  // );
+
+  useEffect(() => {
+    formData.subject = plan ? `website` : '';
+    formData.message = description ? `I am interested in the ${plan} plan which includes: ${description}` : '';
+    setFormData({ ...formData });
+  }, [plan]);
+
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log('Form submitted:', formData);
-  };
+    setStatus("This form is currently inactive.");
+    // setStatus("Sending...");
+
+    // const res = await fetch("/api/contact", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify(formData),
+    // });
+
+    // const data = await res.json();
+    // if (data.success) {
+    //   setStatus("✅ Message sent successfully!");
+    //   setFormData({ name: "", email: "", phone: "", message: "",subject:"" });
+    // } else {
+    //   setStatus("❌ Failed to send message.");
+    // }
+  }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -72,11 +110,27 @@ export default function Contact() {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all duration-200"
                       placeholder="your.email@example.com"
                     />
                   </div>
+                </div>
+
+                {/* Phone Number Field */}
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone || ""}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all duration-200"
+                    placeholder="+91 98765 43210"
+                  />
                 </div>
 
                 <div>
@@ -93,8 +147,6 @@ export default function Contact() {
                   >
                     <option value="">Select a subject</option>
                     <option value="website">Website Design</option>
-                    <option value="mobile">Mobile App Development</option>
-                    <option value="creative">Creative Design</option>
                     <option value="consultation">Free Consultation</option>
                     <option value="other">Other</option>
                   </select>
@@ -124,6 +176,7 @@ export default function Contact() {
                   <span>Send Message</span>
                 </button>
               </form>
+
             </div>
 
             {/* Contact Info */}
@@ -137,7 +190,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900">Email</h3>
-                      <p className="text-gray-600">info@beglobal.co.in</p>
+                      <p className="text-gray-600">beglobal025@gmail.com</p>
                     </div>
                   </div>
 
@@ -147,11 +200,11 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900">Phone</h3>
-                      <p className="text-gray-600">+91 99999 99999</p>
+                      <p className="text-gray-600">9041078035</p>
                     </div>
                   </div>
 
-                  <div className="flex items-center space-x-4">
+                  {/* <div className="flex items-center space-x-4">
                     <div className="bg-gray-600 w-12 h-12 rounded-lg flex items-center justify-center">
                       <MapPin className="h-6 w-6 text-white" />
                     </div>
@@ -169,7 +222,7 @@ export default function Contact() {
                       <h3 className="font-semibold text-gray-900">Business Hours</h3>
                       <p className="text-gray-600">24/7 Support Available</p>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
 
@@ -218,7 +271,7 @@ export default function Contact() {
               },
               {
                 question: "Do you offer ongoing support after project completion?",
-                answer: "Yes! We provide 24/7 support and maintenance services to ensure your digital solutions continue to perform optimally and stay updated with the latest technologies."
+                answer: "Yes! We provide quick support and maintenance services to ensure your digital solutions continue to perform optimally and stay updated with the latest technologies."
               },
               {
                 question: "What industries do you work with?",
