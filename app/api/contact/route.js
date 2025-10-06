@@ -1,3 +1,5 @@
+export const runtime = "node";
+
 import nodemailer from "nodemailer";
 
 export async function POST(req) {
