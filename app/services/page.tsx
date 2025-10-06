@@ -1,4 +1,7 @@
+
+'use client';
 import { Palette, Smartphone, Monitor, ArrowRight, Check } from 'lucide-react';
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 const services = [
@@ -71,6 +74,7 @@ const services = [
 
 
 export default function Services() {
+   const router = useRouter();
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
@@ -182,12 +186,12 @@ export default function Services() {
             Let's discuss your project and create something amazing together
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-full text-lg font-bold hover:shadow-xl transition-all duration-300 hover:scale-105">
+            <button onClick={() => router.push("/prerequisite")} className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-full text-lg font-bold hover:shadow-xl transition-all duration-300 hover:scale-105">
               Start Your Project
             </button>
-            <button className="border-2 border-white text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-white hover:text-slate-800 transition-all duration-300">
+            {/* <button className="border-2 border-white text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-white hover:text-slate-800 transition-all duration-300">
               View Portfolio
-            </button>
+            </button> */}
           </div>
         </div>
       </section>

@@ -40,19 +40,19 @@ export default function Contact() {
     setStatus("This form is currently inactive.");
     // setStatus("Sending...");
 
-    // const res = await fetch("/api/contact", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify(formData),
-    // });
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
 
-    // const data = await res.json();
-    // if (data.success) {
-    //   setStatus("✅ Message sent successfully!");
-    //   setFormData({ name: "", email: "", phone: "", message: "",subject:"" });
-    // } else {
-    //   setStatus("❌ Failed to send message.");
-    // }
+    const data = await res.json();
+    if (data.success) {
+      setStatus("✅ Message sent successfully!");
+      setFormData({ name: "", email: "", phone: "", message: "",subject:"" });
+    } else {
+      setStatus("❌ Failed to send message.");
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
