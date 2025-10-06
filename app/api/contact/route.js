@@ -1,4 +1,4 @@
-export const runtime = "node";
+export const runtime = "nodejs"; // <-- important: Node-only runtime
 
 import nodemailer from "nodemailer";
 
@@ -7,24 +7,23 @@ export async function POST(req) {
     const body = await req.json();
     const { name, email, phone, message, subject } = body;
 
-    // --- Configure your transporter (use your SMTP credentials) ---
+    // Configure your SMTP transporter
     const transporter = nodemailer.createTransport({
-      host: EMAIL_HOST, // or "smtp.gmail.com" for Gmail
-      port: 465, // 465 for SSL, 587 for TLS
+      host: "smtp.hostinger.com", // or Gmail SMTP
+      port: 465,
       secure: true,
       auth: {
-        user: process.env.EMAIL_USER, // your email
-        pass: process.env.EMAIL_PASS, // your email password or app password
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
       },
     });
 
-    // --- Compose mail ---
+    // Compose email
     const mailOptions = {
       from: `"${name}" <${process.env.SMTP_USER}>`,
-      to: process.env.RECEIVER_EMAIL, // your receiving email
+      to: process.env.RECEIVER_EMAIL,
       subject: subject || "New Contact Form Message",
       html: `
-        <h2>New Contact Form Submission</h2>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Phone:</strong> ${phone}</p>
@@ -32,12 +31,15 @@ export async function POST(req) {
       `,
     };
 
-    // --- Send mail ---
+    // Send email
     await transporter.sendMail(mailOptions);
 
     return new Response(JSON.stringify({ success: true }), { status: 200 });
   } catch (error) {
     console.error("Email send error:", error);
-    return new Response(JSON.stringify({ success: false, error: error.message }), { status: 500 });
+    return new Response(
+      JSON.stringify({ success: false, error: error.message }),
+      { status: 500 }
+    );
   }
 }
