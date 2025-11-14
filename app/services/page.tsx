@@ -30,6 +30,7 @@ const services = [
       'Multiple product images upload',
       'Integrated payment gateway setup',
       'Contact us form',
+      '1 year free domain and hosting*',
       'Free SSL certificate',
       '15 days of free support'
     ],
@@ -49,8 +50,9 @@ const services = [
       'Rating and reviews',
       'Website QR code for easy access',
       'Contact us form',
+      '1 year free domain and hosting*',
       'Free SSL certificate',
-      '1 month of free support'
+      '15 days of free support'
     ],
     gradient: 'from-blue-600 to-blue-700',
     iconBg: 'from-blue-500 to-blue-600'
@@ -71,7 +73,7 @@ const services = [
 
 
 export default function Services() {
-   const router = useRouter();
+  const router = useRouter();
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
@@ -93,8 +95,16 @@ export default function Services() {
             {services.map((service, index) => (
               <div
                 key={service.title}
-                className="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-3 overflow-hidden group"
+                className="relative bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-3 overflow-hidden group"
               >
+                {/* Hot Selling Tag - for Diamond only */}
+                {service.title.includes("Diamond") && (
+                  <div className="absolute top-1.5 right-8 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg ">
+                    Best Selling
+                  </div>
+                )}
+
+
                 {/* Header */}
                 <div className={`bg-gradient-to-br ${service.gradient} p-8 text-white`}>
                   {/* <div className={`bg-gradient-to-br ${service.iconBg} w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
