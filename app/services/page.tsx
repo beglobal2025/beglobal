@@ -21,7 +21,7 @@ const services = [
     iconBg: 'from-gray-500 to-gray-600'
   },
   {
-    title: 'Gold (₹59,999)',
+    title: 'Gold (₹49,999)',
     description: 'A complete eCommerce solution to sell your products online.',
     features: [
       'Attractive, mobile-friendly eCommerce website',
@@ -31,14 +31,13 @@ const services = [
       'Integrated payment gateway setup',
       'Contact us form',
       'Free SSL certificate',
-      '1 year free domain & hosting',
       '15 days of free support'
     ],
     gradient: 'from-slate-600 to-slate-700',
     iconBg: 'from-slate-500 to-slate-600'
   },
   {
-    title: 'Diamond (₹79,999)',
+    title: 'Diamond (₹59,999)',
     description: 'Advanced eCommerce with powerful features to boost sales and visibility.',
     features: [
       'Premium, mobile-friendly eCommerce website',
@@ -48,12 +47,10 @@ const services = [
       'Integrated payment gateway setup',
       'Wishlist',
       'Rating and reviews',
-      'Product QR code for easy access',
+      'Website QR code for easy access',
       'Contact us form',
       'Free SSL certificate',
-      '1 year free domain & hosting',
-      '1 month of free support',
-      '2 months of SEO optimization for better ranking'
+      '1 month of free support'
     ],
     gradient: 'from-blue-600 to-blue-700',
     iconBg: 'from-blue-500 to-blue-600'
