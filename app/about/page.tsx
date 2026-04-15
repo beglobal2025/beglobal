@@ -1,170 +1,284 @@
 'use client';
-import { Target, Award, Users, Globe, Phone } from 'lucide-react';
-import { useRouter } from "next/navigation";
+import Link from 'next/link';
+import {
+  ArrowRight, Target, Lightbulb, Heart, Globe,
+  Monitor, Smartphone, TrendingUp, CheckCircle,
+} from 'lucide-react';
+
+const stats = [
+  { value: '150+', label: 'Projects Delivered' },
+  { value: '100+', label: 'Happy Clients' },
+  { value: '12+', label: 'Years of Experience' },
+  { value: '24/7', label: 'Support Available' },
+];
+
+const values = [
+  {
+    icon: Target,
+    title: 'Excellence First',
+    desc: 'We never ship work we wouldn\'t be proud to show. Every pixel, every line of code, every campaign is crafted to the highest standard.',
+    color: 'from-blue-500 to-indigo-600',
+    bg: 'bg-blue-50',
+  },
+  {
+    icon: Lightbulb,
+    title: 'Creative Thinking',
+    desc: 'We approach every project fresh — no copy-paste templates. Your business is unique, and your digital presence should be too.',
+    color: 'from-amber-500 to-orange-600',
+    bg: 'bg-amber-50',
+  },
+  {
+    icon: Heart,
+    title: 'Client Partnership',
+    desc: 'We treat your business like our own. Long-term relationships built on trust, transparency, and genuine care for your growth.',
+    color: 'from-rose-500 to-pink-600',
+    bg: 'bg-rose-50',
+  },
+  {
+    icon: Globe,
+    title: 'Growth Mindset',
+    desc: 'We stay ahead of technology and trends so you always benefit from the latest tools, strategies, and best practices.',
+    color: 'from-emerald-500 to-teal-600',
+    bg: 'bg-emerald-50',
+  },
+];
+
+const services = [
+  { icon: Monitor, label: 'Web Development', color: 'text-blue-600', bg: 'bg-blue-50' },
+  { icon: Smartphone, label: 'Mobile Apps', color: 'text-violet-600', bg: 'bg-violet-50' },
+  { icon: TrendingUp, label: 'Digital Marketing', color: 'text-emerald-600', bg: 'bg-emerald-50' },
+];
+
+const promises = [
+  'On-time delivery, every time',
+  'Transparent pricing — no hidden fees',
+  'Regular progress updates',
+  'Post-launch support included',
+  'You own all code & creative assets',
+  'Unlimited revisions during development',
+];
 
 export default function About() {
-  const router = useRouter();
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* ── Hero ─────────────────────────────────────────── */}
+      <section className="relative bg-hero text-white py-24 overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute -top-40 -right-40 w-[400px] h-[400px] bg-rose-600 rounded-full blur-3xl opacity-20" />
+          <div className="absolute -bottom-40 -left-40 w-[400px] h-[400px] bg-violet-700 rounded-full blur-3xl opacity-20" />
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <span className="inline-block bg-white/10 border border-white/15 text-gray-200 text-xs font-semibold px-4 py-1.5 rounded-full mb-6 uppercase tracking-widest">
+            About Us
+          </span>
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            About <span className="bg-gradient-to-r from-blue-400 to-slate-300 bg-clip-text text-transparent">BeGlobal</span>
+            The Team Behind{' '}
+            <span className="bg-gradient-to-r from-pink-300 to-violet-400 bg-clip-text text-transparent">
+              BeGlobal
+            </span>
           </h1>
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto text-blue-100">
-            Empowering businesses to reach global markets through innovative digital solutions
+          <p className="text-lg md:text-xl max-w-2xl mx-auto text-gray-300 leading-relaxed">
+            We&apos;re a passionate team of developers, designers, and marketers
+            on a mission to help Indian businesses thrive in the digital world.
           </p>
         </div>
       </section>
 
-      {/* Story Section */}
+      {/* ── Stats ────────────────────────────────────────── */}
+      <section className="bg-white py-14 border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((s) => (
+              <div key={s.label} className="text-center">
+                <div className="text-4xl font-bold bg-gradient-to-r from-rose-600 to-violet-600 bg-clip-text text-transparent mb-1">
+                  {s.value}
+                </div>
+                <div className="text-gray-500 text-sm font-medium">{s.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Our Story ────────────────────────────────────── */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Story</h2>
-              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                Founded with a vision to break down digital barriers, BeGlobal has been at the forefront of helping businesses expand their reach beyond borders. We understand that in today's interconnected world, having a strong digital presence is not just an advantage—it's essential.
+              <span className="text-rose-600 font-semibold text-xs uppercase tracking-widest">Our Story</span>
+              <h2 className="text-4xl font-bold text-gray-900 mt-2 mb-6">
+                Built to Help Businesses Like Yours Grow
+              </h2>
+              <p className="text-gray-600 mb-5 leading-relaxed">
+                BeGlobal was founded with one goal: to make high-quality digital
+                services accessible to every business — not just the big ones.
+                We saw too many small and medium businesses struggle online
+                because good digital partners were too expensive or too slow.
               </p>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Our team combines years of experience in web development, mobile app creation, and creative design to deliver solutions that don't just look great, but drive real business results in global markets.
+              <p className="text-gray-600 mb-5 leading-relaxed">
+                We started by building websites for local shops and restaurants.
+                Word spread. Soon we were building mobile apps, running marketing
+                campaigns, and helping businesses across India reach customers
+                they never thought possible.
               </p>
-              {/* <div className="grid grid-cols-2 gap-6">
-                <div className="text-center p-6 bg-gray-50 rounded-xl">
-                  <div className="text-3xl font-bold text-blue-600 mb-2">500+</div>
-                  <div className="text-gray-600">Projects Completed</div>
-                </div>
-                <div className="text-center p-6 bg-gray-50 rounded-xl">
-                  <div className="text-3xl font-bold text-emerald-600 mb-2">50+</div>
-                  <div className="text-gray-600">Countries Reached</div>
-                </div>
-              </div> */}
+              <p className="text-gray-600 mb-8 leading-relaxed">
+                Today, BeGlobal is a full-service digital agency trusted by 150+
+                clients. We combine the energy of a startup with the experience
+                of an established agency — and we&apos;re always in your corner.
+              </p>
+
+              {/* What we do */}
+              <div className="flex flex-wrap gap-3">
+                {services.map((s) => (
+                  <div key={s.label} className={`flex items-center space-x-2 ${s.bg} px-4 py-2 rounded-full`}>
+                    <s.icon className={`h-4 w-4 ${s.color}`} />
+                    <span className={`text-sm font-semibold ${s.color}`}>{s.label}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="bg-slate-700 p-8 rounded-2xl text-white">
-              <h3 className="text-2xl font-bold mb-6">Our Mission</h3>
-              <p className="text-lg leading-relaxed mb-6">
-                To democratize global market access by providing world-class digital solutions that enable businesses of all sizes to compete and succeed internationally.
-              </p>
-              <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
-              <p className="text-lg leading-relaxed">
-                A world where geographical boundaries don't limit business potential, and every company has the tools to reach global audiences effectively.
-              </p>
+
+            {/* Mission / Vision card */}
+            <div className="space-y-6">
+              <div className="bg-gradient-to-br from-slate-900 to-indigo-950 p-8 rounded-3xl text-white">
+                <div className="flex items-center space-x-3 mb-4">
+                  <div className="w-10 h-10 bg-rose-600 rounded-xl flex items-center justify-center">
+                    <Target className="h-5 w-5 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold">Our Mission</h3>
+                </div>
+                <p className="text-gray-300 leading-relaxed">
+                  To empower every business — big or small — with world-class
+                  digital tools, beautiful design, and marketing strategies that
+                  deliver real, measurable results.
+                </p>
+              </div>
+
+              <div className="bg-gradient-to-br from-rose-600 to-violet-700 p-8 rounded-3xl text-white">
+                <div className="flex items-center space-x-3 mb-4">
+                  <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
+                    <Globe className="h-5 w-5 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold">Our Vision</h3>
+                </div>
+                <p className="text-rose-100 leading-relaxed">
+                  A future where every Indian business has the digital presence
+                  it deserves — where geography and budget are never a barrier
+                  to growth.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Values Section */}
+      {/* ── Values ───────────────────────────────────────── */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Core Values</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              The principles that guide everything we do
+          <div className="text-center mb-14">
+            <span className="text-rose-600 font-semibold text-xs uppercase tracking-widest">What We Stand For</span>
+            <h2 className="text-4xl font-bold text-gray-900 mt-2 mb-4">Our Core Values</h2>
+            <p className="text-gray-500 max-w-xl mx-auto">
+              These principles guide every decision we make and every project we deliver.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 text-center">
-              <div className="bg-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Target className="h-8 w-8 text-white" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {values.map((v) => (
+              <div
+                key={v.title}
+                className="bg-white rounded-3xl p-7 shadow-sm border border-gray-100 hover:shadow-xl hover:border-rose-100 transition-all duration-300 hover:-translate-y-1 group text-center"
+              >
+                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${v.color} flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                  <v.icon className="h-7 w-7 text-white" />
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-3">{v.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{v.desc}</p>
               </div>
-              <h3 className="text-xl font-bold mb-4 text-gray-900">Excellence</h3>
-              <p className="text-gray-600">
-                We strive for perfection in every project, delivering solutions that exceed expectations.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 text-center">
-              <div className="bg-slate-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Award className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-xl font-bold mb-4 text-gray-900">Innovation</h3>
-              <p className="text-gray-600">
-                Staying ahead of trends and technologies to provide cutting-edge solutions.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 text-center">
-              <div className="bg-gray-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Users className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-xl font-bold mb-4 text-gray-900">Partnership</h3>
-              <p className="text-gray-600">
-                Building long-term relationships with our clients based on trust and mutual success.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 text-center">
-              <div className="bg-gray-700 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Globe className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-xl font-bold mb-4 text-gray-900">Global Mindset</h3>
-              <p className="text-gray-600">
-                Understanding diverse markets and cultures to create universally appealing solutions.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Team Section */}
+      {/* ── Our Promises ─────────────────────────────────── */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose Us?</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              What sets BeGlobal apart in the competitive digital landscape
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center p-8">
-              <div className="bg-blue-600 text-white text-3xl font-bold w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                10+
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900">Years of Experience</h3>
-              <p className="text-gray-600">
-                Proven track record of delivering successful digital solutions across various industries.
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <span className="text-rose-600 font-semibold text-xs uppercase tracking-widest">Our Commitment</span>
+              <h2 className="text-4xl font-bold text-gray-900 mt-2 mb-6">
+                What You Can Always Expect From Us
+              </h2>
+              <p className="text-gray-500 mb-8 leading-relaxed">
+                We believe that great work comes from clear expectations.
+                Here&apos;s what we commit to on every single project.
               </p>
+              <ul className="space-y-4">
+                {promises.map((p) => (
+                  <li key={p} className="flex items-center space-x-3">
+                    <CheckCircle className="h-5 w-5 text-rose-600 shrink-0" />
+                    <span className="text-gray-700 font-medium">{p}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            <div className="text-center p-8">
-              <div className="bg-slate-600 text-white text-4xl font-bold w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Phone className="h-6 w-6 text-white" />
+            <div className="bg-gradient-to-br from-slate-950 to-indigo-950 rounded-3xl p-10 text-white">
+              <h3 className="text-2xl font-bold mb-8">Why Clients Stay With Us</h3>
+              <div className="space-y-6">
+                {[
+                  { pct: '97%', label: 'Client satisfaction rate' },
+                  { pct: '85%', label: 'Clients return for a second project' },
+                  { pct: '90%', label: 'Projects delivered on time' },
+                ].map((item) => (
+                  <div key={item.label}>
+                    <div className="flex justify-between mb-2">
+                      <span className="text-gray-300 text-sm">{item.label}</span>
+                      <span className="text-white font-bold">{item.pct}</span>
+                    </div>
+                    <div className="h-2 bg-white/10 rounded-full overflow-hidden">
+                      <div
+                        className="h-full bg-gradient-to-r from-rose-500 to-violet-500 rounded-full"
+                        style={{ width: item.pct }}
+                      />
+                    </div>
+                  </div>
+                ))}
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900">Support</h3>
-              <p className="text-gray-600">
-                Round-the-clock support to ensure your business never misses an opportunity.
-              </p>
-            </div>
-
-            <div className="text-center p-8">
-              <div className="bg-gray-600 text-white text-2xl font-bold w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                100%
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900">Satisfaction</h3>
-              <p className="text-gray-600">
-                Commitment to client satisfaction with guaranteed results and ongoing support.
-              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-slate-800 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+      {/* ── CTA ──────────────────────────────────────────── */}
+      <section className="py-20 bg-hero text-white relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 right-0 w-80 h-80 bg-rose-600 rounded-full blur-3xl opacity-15" />
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-violet-700 rounded-full blur-3xl opacity-15" />
+        </div>
+        <div className="relative max-w-3xl mx-auto px-4 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-5">
             Ready to Partner With Us?
           </h2>
-          <p className="text-xl mb-12 max-w-2xl mx-auto">
-            Let's work together to take your business to the next level
+          <p className="text-gray-300 text-lg mb-8">
+            Let&apos;s talk about your project and see how we can help your
+            business grow.
           </p>
-          <button onClick={() => router.push("/contact")} className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-full text-lg font-bold hover:shadow-xl transition-all duration-300 hover:scale-105">
-            Contact Us Today
-          </button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-rose-600 to-violet-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-2xl hover:shadow-rose-500/40 hover:scale-105 transition-all duration-300"
+            >
+              <span>Start a Conversation</span>
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              href="/portfolio"
+              className="inline-flex items-center justify-center border-2 border-white/25 text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-slate-900 transition-all duration-300"
+            >
+              View Our Work
+            </Link>
+          </div>
         </div>
       </section>
     </div>

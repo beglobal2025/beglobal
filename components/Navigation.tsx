@@ -3,13 +3,14 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import { Menu, X, Globe } from 'lucide-react';
+import { Menu, X, Globe, ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const navItems = [
   { name: 'Home', href: '/' },
   { name: 'Services', href: '/services' },
-  { name: 'About Us', href: '/about' },
+  { name: 'Portfolio', href: '/portfolio' },
+  { name: 'About', href: '/about' },
   { name: 'Contact', href: '/contact' },
 ];
 
@@ -18,69 +19,85 @@ export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white shadow-lg sticky top-0 z-50">
+    <header className="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2 group">
-            <div className="bg-blue-600 p-2 rounded-lg group-hover:shadow-lg transition-all duration-300">
-              <Globe className="h-6 w-6 text-white" />
+          <Link href="/" className="flex items-center space-x-2.5 group" onClick={() => setIsMenuOpen(false)}>
+            <div className="bg-gradient-to-br from-rose-600 to-violet-600 p-2 rounded-xl shadow-lg shadow-rose-100 group-hover:shadow-rose-200 transition-all duration-300">
+              <Globe className="h-5 w-5 text-white" />
             </div>
-            <span className="text-2xl font-bold text-slate-800">
-              BeGlobal
+            <span className="text-xl font-bold text-gray-900">
+              Be<span className="text-rose-600">Global</span>
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex items-center space-x-1">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
                 className={cn(
-                  'px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:scale-105',
+                  'px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200',
                   pathname === item.href
-                    ? 'bg-blue-600 text-white shadow-lg'
-                    : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                    ? 'text-rose-600 bg-rose-50 font-semibold'
+                    : 'text-gray-600 hover:text-rose-600 hover:bg-rose-50'
                 )}
               >
                 {item.name}
               </Link>
             ))}
+            <Link
+              href="/contact"
+              className="ml-3 flex items-center space-x-1.5 bg-gradient-to-r from-rose-600 to-violet-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:shadow-lg hover:shadow-rose-200 hover:scale-105 transition-all duration-200"
+            >
+              <span>Get Free Quote</span>
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
           </nav>
 
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-200"
+            className="md:hidden p-2 rounded-xl text-gray-600 hover:text-rose-600 hover:bg-rose-50 transition-colors duration-200"
+            aria-label="Toggle menu"
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden border-t border-gray-200 py-4">
-            <div className="flex flex-col space-y-2">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  onClick={() => setIsMenuOpen(false)}
-                  className={cn(
-                    'px-3 py-2 rounded-md text-sm font-medium transition-all duration-300',
-                    pathname === item.href
-                      ? 'bg-blue-600 text-white'
-                      : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
-                  )}
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-        )}
       </div>
+
+      {/* Mobile Navigation */}
+      {isMenuOpen && (
+        <div className="md:hidden border-t border-gray-100 bg-white shadow-xl">
+          <div className="px-4 py-4 space-y-1">
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                onClick={() => setIsMenuOpen(false)}
+                className={cn(
+                  'flex items-center px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200',
+                  pathname === item.href
+                    ? 'text-rose-600 bg-rose-50 font-semibold'
+                    : 'text-gray-600 hover:text-rose-600 hover:bg-rose-50'
+                )}
+              >
+                {item.name}
+              </Link>
+            ))}
+            <Link
+              href="/contact"
+              onClick={() => setIsMenuOpen(false)}
+              className="flex items-center justify-center space-x-1.5 mt-3 bg-gradient-to-r from-rose-600 to-violet-600 text-white px-4 py-3 rounded-xl text-sm font-semibold"
+            >
+              <span>Get Free Quote</span>
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      )}
     </header>
   );
 }

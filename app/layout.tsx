@@ -7,8 +7,8 @@ import Footer from '@/components/Footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'BeGlobal - Expand Your Business Globally',
-  description: 'Professional web design and development services to help your business reach global markets',
+  title: 'BeGlobal — Websites, Mobile Apps & Digital Marketing',
+  description: 'BeGlobal is a full-service digital agency helping Indian businesses grow with custom websites, mobile apps, and results-driven digital marketing. 200+ projects delivered.',
 };
 
 export default function RootLayout({
