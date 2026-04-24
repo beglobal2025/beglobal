@@ -275,10 +275,6 @@ const faqs = [
     a: 'Yes! All packages include 15 days of free post-launch support. We also offer ongoing maintenance retainers for clients who need continuous help.',
   },
   {
-    q: 'What is included in the "free domain & hosting" offer?',
-    a: 'Gold and Diamond website packages include 1 year of free domain registration and shared hosting. After year one, normal renewal charges apply.',
-  },
-  {
     q: 'Can I see examples of your previous work?',
     a: 'Absolutely! Visit our Portfolio page to see a selection of websites, apps, and marketing campaigns we have delivered for clients.',
   },

@@ -250,8 +250,8 @@ export default function Services() {
         </div>
       </section>
 
-      {/* ── Website Pricing ──────────────────────────────── */}
-      <section className="py-20 bg-gray-50">
+      {/* ── Website Pricing ── hidden ────────────────────── */}
+      {false && <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <span className="text-rose-600 font-semibold text-xs uppercase tracking-widest">Pricing</span>
@@ -316,10 +316,10 @@ export default function Services() {
             * Domain & hosting offer subject to availability. GST applicable.
           </p>
         </div>
-      </section>
+      </section>}
 
-      {/* ── Marketing Pricing ─────────────────────────────── */}
-      <section className="py-20 bg-white">
+      {/* ── Marketing Pricing ── hidden ───────────────────── */}
+      {false && <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <span className="text-emerald-600 font-semibold text-xs uppercase tracking-widest">Pricing</span>
@@ -378,7 +378,7 @@ export default function Services() {
             ))}
           </div>
         </div>
-      </section>
+      </section>}
 
       {/* ── Mobile App Inquiry ────────────────────────────── */}
       <section className="py-16 bg-gradient-to-r from-violet-600 to-purple-700">
