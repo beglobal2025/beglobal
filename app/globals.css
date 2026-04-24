@@ -77,4 +77,7 @@
   .bg-hero {
     background: linear-gradient(135deg, #c2185b 0%, #7c3aed 100%);
   }
+  .bg-hero-light {
+    background: linear-gradient(135deg, #fdf2f8 0%, #f5f3ff 50%, #eff6ff 100%);
+  }
 }

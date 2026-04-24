@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { Globe, Mail, Phone, MessageCircle, ArrowRight } from 'lucide-react';
+import Image from 'next/image';
+import { Mail, Phone, MessageCircle, ArrowRight } from 'lucide-react';
 
 const services = [
   { label: 'Website Development', href: '/services' },
@@ -66,12 +67,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center space-x-2.5 mb-5">
-              <div className="bg-gradient-to-br from-rose-600 to-violet-600 p-2 rounded-xl">
-                <Globe className="h-5 w-5 text-white" />
-              </div>
+            <Link href="/" className="flex items-center space-x-2 mb-5">
+              <Image
+                src="/BeGlobalLogo.svg"
+                alt="BeGlobal"
+                width={40}
+                height={40}
+                className="h-10 w-10 object-contain brightness-0 invert"
+              />
               <span className="text-xl font-bold">
-                Be<span className="text-rose-400">Global</span>
+                <span className="text-rose-400">Be</span><span className="text-violet-400">Global</span>
               </span>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">

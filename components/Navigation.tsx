@@ -3,7 +3,8 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import { Menu, X, Globe, ArrowRight } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
+import Image from 'next/image';
 import { cn } from '@/lib/utils';
 
 const navItems = [
@@ -23,12 +24,17 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2.5 group" onClick={() => setIsMenuOpen(false)}>
-            <div className="bg-gradient-to-br from-rose-600 to-violet-600 p-2 rounded-xl shadow-lg shadow-rose-100 group-hover:shadow-rose-200 transition-all duration-300">
-              <Globe className="h-5 w-5 text-white" />
-            </div>
-            <span className="text-xl font-bold text-gray-900">
-              Be<span className="text-rose-600">Global</span>
+          <Link href="/" className="flex items-center space-x-2 group" onClick={() => setIsMenuOpen(false)}>
+            <Image
+              src="/BeGlobalLogo.svg"
+              alt="BeGlobal"
+              width={40}
+              height={40}
+              className="h-10 w-10 object-contain"
+              priority
+            />
+            <span className="text-xl font-bold">
+              <span className="text-rose-600">Be</span><span className="text-violet-600">Global</span>
             </span>
           </Link>
 
