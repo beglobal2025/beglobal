@@ -111,7 +111,7 @@ const portfolioItems = [
   {
 
     title: 'Hellinn',
-    category: 'Web Development' as Category,
+    category: 'Web Development',
     gradient: 'from-pink-500 to-rose-600',
     image: '/hellinn.png',
     result: '3× increase in online sales',
