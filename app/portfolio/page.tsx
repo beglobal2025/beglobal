@@ -17,7 +17,7 @@ const projects = [
     category: 'Web Development' as Category,
     description:
       'A full-featured eCommerce store with product management, Razorpay payment gateway, admin dashboard, and inventory tracking.',
-    tags: ['Next.js', 'Node.js', 'PostgreSQL', 'Admin Panel'],
+    tags: ['Next.js', 'Node.js', 'Postgresql', 'Razorpay'],
     gradient: 'from-pink-500 to-rose-600',
     image: '/hellinn.png',
     result: '3× increase in online sales',

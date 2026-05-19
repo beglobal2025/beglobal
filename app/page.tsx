@@ -1,8 +1,8 @@
 'use client';
 import Link from 'next/link';
 import {
-  Monitor, Smartphone, TrendingUp, ArrowRight, Star,
-  Check, Trophy, Globe, Users, Briefcase, HeartHandshake,
+  Monitor, Smartphone, TrendingUp, ArrowRight,
+  Trophy, Users, Briefcase, HeartHandshake,
 } from 'lucide-react';
 import TestimonialsSlider from '@/components/TestimonialsSlider';
 
@@ -46,37 +46,35 @@ const services = [
 const technologies = [
   {
     name: 'Next.js',
-    mark: 'N',
-    color: 'bg-gray-950 text-white',
-    border: 'hover:border-gray-300',
+    logo: 'https://cdn.simpleicons.org/nextdotjs/000000',
   },
   {
     name: 'Node.js',
-    mark: 'JS',
-    color: 'bg-emerald-600 text-white',
-    border: 'hover:border-emerald-200',
+    logo: 'https://cdn.simpleicons.org/nodedotjs/5FA04E',
   },
   {
     name: 'AWS',
-    mark: 'AWS',
-    color: 'bg-orange-500 text-white',
-    border: 'hover:border-orange-200',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg',
   },
   {
     name: 'Flutter',
-    mark: 'F',
-    color: 'bg-sky-500 text-white',
-    border: 'hover:border-sky-200',
+    logo: 'https://cdn.simpleicons.org/flutter/02569B',
   },
   {
     name: 'Shopify',
-    mark: 'S',
-    color: 'bg-lime-600 text-white',
-    border: 'hover:border-lime-200',
+    logo: 'https://cdn.simpleicons.org/shopify/7AB55C',
   },
 ];
 
 const portfolioItems = [
+  {
+    title: 'Quickpro — eCommerce Store',
+    category: 'Web Development',
+    result: 'Live & selling online',
+    gradient: 'from-blue-500 to-cyan-600',
+    image: '/quickproaus.png',
+    url: 'https://quickproaus.com',
+  },
   {
     title: 'The1Wish — eCommerce',
     category: 'Web Development',
@@ -85,6 +83,7 @@ const portfolioItems = [
     image: '/the1wish.png',
     url: 'https://the1wish.com/',
   },
+
   {
     title: 'Freshy Painting',
     category: 'Web Development',
@@ -93,13 +92,17 @@ const portfolioItems = [
     image: '/freshypainting.png',
     url: 'https://freshypainting.com/',
   },
+
+
+
+
   {
-    title: 'Nocord',
+    title: 'Gamev',
     category: 'Web Development',
     result: 'Live & growing',
     gradient: 'from-slate-600 to-gray-800',
-    image: '/nocord.png',
-    url: 'https://nocord.in/',
+    image: '/gamedev.png',
+    url: 'https://gamedev.com',
   },
   {
     title: 'Blas Bloom Globals',
@@ -109,14 +112,7 @@ const portfolioItems = [
     image: '/blasbloom.png',
     url: 'https://blasbloomglobals.com/',
   },
-  {
-    title: 'Quickpro — eCommerce Store',
-    category: 'Web Development',
-    result: 'Live & selling online',
-    gradient: 'from-blue-500 to-cyan-600',
-    image: '/quickproaus.png',
-    url: 'https://quickproaus.com',
-  },
+
   {
     title: 'Hassle Free Car Rentals',
     category: 'Web Development',
@@ -145,16 +141,7 @@ const testimonials = [
     rating: 5,
     initial: 'K',
     color: 'bg-orange-500',
-  },
-  {
-    name: 'Nitin',
-    role: 'Founder, Nocord',
-    review:
-      'Our hydration brand needed a modern online store and BeGlobal built exactly that. The design is clean, the shopping experience is smooth, and our customers love it. Highly recommend!',
-    rating: 5,
-    initial: 'N',
-    color: 'bg-slate-600',
-  },
+  },  
   {
     name: 'Akanksha',
     role: 'Owner, Blas Bloom Globals',
@@ -188,56 +175,47 @@ export default function Home() {
   return (
     <div className="w-full">
       {/* ── Hero ─────────────────────────────────────────── */}
-      <section className="relative bg-hero-light overflow-hidden min-h-[92vh] flex items-center">
-        {/* Soft background decorations */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-32 -right-32 w-[500px] h-[500px] bg-violet-200 rounded-full blur-3xl opacity-40" />
-          <div className="absolute -bottom-32 -left-32 w-[400px] h-[400px] bg-rose-200 rounded-full blur-3xl opacity-40" />
-          <div className="absolute top-1/2 left-1/2 w-[300px] h-[300px] bg-indigo-100 rounded-full blur-3xl opacity-50 -translate-x-1/2 -translate-y-1/2" />
-          {/* Subtle dot grid */}
+      <section className="relative overflow-hidden bg-hero-light">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute -top-32 -right-32 w-[520px] h-[520px] bg-violet-200 rounded-full blur-3xl opacity-45" />
+          <div className="absolute -bottom-40 -left-32 w-[460px] h-[460px] bg-rose-200 rounded-full blur-3xl opacity-45" />
           <div
             className="absolute inset-0 opacity-30"
             style={{
-              backgroundImage: 'radial-gradient(circle, #c4b5fd 1px, transparent 1px)',
+              backgroundImage:
+                'radial-gradient(circle, #c4b5fd 1px, transparent 1px)',
               backgroundSize: '36px 36px',
             }}
           />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full">
-
-          {/* ── Left: Text ── */}
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-10 grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-14 items-center">
           <div>
-            <div className="inline-flex items-center space-x-2 bg-white border border-rose-100 shadow-sm px-4 py-2 rounded-full mb-7">
-              <span className="w-2 h-2 bg-rose-500 rounded-full animate-pulse" />
-              <span className="text-sm font-medium text-rose-600">Websites · Mobile Apps · Digital Marketing</span>
+            <div className="inline-flex items-center gap-2 border border-rose-100 bg-white/80 shadow-sm px-4 py-2 rounded-full mb-7">
+              <span className="h-2 w-2 rounded-full bg-rose-500" />
+              <span className="text-sm font-semibold text-rose-600">Websites, apps and growth systems</span>
             </div>
 
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-[1.1] tracking-tight text-gray-900">
-              We Build{' '}
-              <span className="bg-gradient-to-r from-rose-500 to-violet-600 bg-clip-text text-transparent">
-                Digital Products
-              </span>{' '}
-              That Grow Your Business
+            <h1 className="text-5xl md:text-5.5xl font-bold mb-6 leading-[1.02] tracking-tight text-gray-900">
+              Premium digital experiences for{' '}
+              <span className="bg-gradient-to-r from-rose-600 to-violet-600 bg-clip-text text-transparent">
+                brands ready to grow
+              </span>
             </h1>
 
-            <p className="text-lg text-gray-500 mb-8 max-w-lg leading-relaxed">
-              From stunning websites to powerful mobile apps and results-driven marketing — we help businesses go digital and reach more customers every day.
+            <p className="text-lg text-gray-600 mb-9 max-w-xl leading-relaxed">
+              BeGlobal designs and builds high-performing websites, eCommerce stores, mobile apps, and digital campaigns with the polish of a studio and the speed of a product team.
             </p>
 
-            {/* Quick stats */}
-            <div className="flex items-center gap-8 mb-10">
+            <div className="grid grid-cols-3 gap-4 mb-10 max-w-xl">
               {[
-                { value: '200+', label: 'Projects' },
-                { value: '150+', label: 'Clients' },
-                { value: '5★', label: 'Rated' },
-              ].map((s, i) => (
-                <div key={s.label} className="flex items-center gap-8">
-                  <div>
-                    <div className="text-2xl font-bold text-gray-900">{s.value}</div>
-                    <div className="text-xs text-gray-400 uppercase tracking-wide">{s.label}</div>
-                  </div>
-                  {i < 2 && <div className="w-px h-8 bg-gray-200" />}
+                { value: '200+', label: 'Projects delivered' },
+                { value: '150+', label: 'Clients served' },
+                { value: '4.9', label: 'Client rating' },
+              ].map((s) => (
+                <div key={s.label} className="border border-gray-100 bg-white/80 rounded-lg p-4 shadow-sm">
+                  <div className="text-2xl font-bold text-gray-900">{s.value}</div>
+                  <div className="text-xs text-gray-500 mt-1 leading-snug">{s.label}</div>
                 </div>
               ))}
             </div>
@@ -245,99 +223,73 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/portfolio"
-                className="inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-rose-500 to-violet-600 text-white px-8 py-4 rounded-full text-base font-semibold shadow-lg shadow-rose-200 hover:shadow-xl hover:shadow-rose-300 hover:scale-105 transition-all duration-300"
+                className="inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-rose-600 to-violet-600 text-white px-8 py-4 rounded-md text-base font-bold shadow-lg shadow-rose-200 hover:shadow-xl hover:shadow-rose-300 transition-all duration-300"
               >
                 <span>View Our Work</span>
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center border-2 border-gray-200 text-gray-700 px-8 py-4 rounded-full text-base font-semibold hover:border-rose-400 hover:text-rose-600 transition-all duration-300 bg-white/60 backdrop-blur-sm"
+                className="inline-flex items-center justify-center border border-gray-200 text-gray-700 bg-white/80 px-8 py-4 rounded-md text-base font-semibold hover:border-rose-300 hover:text-rose-600 transition-all duration-300"
               >
                 Get Free Quote
               </Link>
             </div>
           </div>
 
-          {/* ── Right: Creative floating cards ── */}
-          <div className="hidden lg:block relative h-[480px]">
-            {/* Background glow */}
-            <div className="absolute inset-8 bg-gradient-to-br from-rose-100/60 to-violet-100/60 rounded-3xl blur-xl" />
-
-            {/* Center card */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-3xl shadow-2xl shadow-violet-100 border border-gray-100 p-6 w-56 z-10">
-              <div className="w-14 h-14 bg-gradient-to-br from-rose-500 to-violet-600 rounded-2xl mx-auto flex items-center justify-center mb-4 shadow-lg shadow-rose-200">
-                <Globe className="h-7 w-7 text-white" />
-              </div>
-              <div className="text-center mb-4">
-                <div className="font-bold text-gray-900 text-base">BeGlobal</div>
-                <div className="text-xs text-gray-400">Digital Agency</div>
-              </div>
-              <div className="grid grid-cols-2 gap-2">
-                {[{ v: '200+', l: 'Projects' }, { v: '150+', l: 'Clients' }, { v: '5★', l: 'Rating' }, { v: '24/7', l: 'Support' }].map((s) => (
-                  <div key={s.l} className="bg-gray-50 rounded-xl p-2 text-center">
-                    <div className="text-xs font-bold text-gray-800">{s.v}</div>
-                    <div className="text-[10px] text-gray-400">{s.l}</div>
-                  </div>
-                ))}
-              </div>
+          <div className="relative">
+            <div className="grid grid-cols-6 gap-4">
+              <a
+                href="https://quickproaus.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="col-span-6 block overflow-hidden rounded-lg border border-white bg-white p-2 shadow-2xl shadow-rose-100"
+              >
+                <div
+                  className="aspect-[1.55/1] rounded-md bg-cover bg-top"
+                  style={{ backgroundImage: 'url(/quickproaus.png)' }}
+                />
+              </a>
+              {portfolioItems.slice(1, 3).map((item) => (
+                <a
+                  key={item.title}
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="col-span-3 block overflow-hidden rounded-lg border border-white bg-white p-2 shadow-lg shadow-violet-100/60"
+                >
+                  <div
+                    className="aspect-[1.42/1] rounded-md bg-cover bg-top"
+                    style={{ backgroundImage: `url(${item.image})` }}
+                  />
+                </a>
+              ))}
             </div>
 
-            {/* Web Design card — top left */}
-            <div className="absolute top-6 left-4 bg-white rounded-2xl shadow-lg shadow-rose-100 border border-gray-100 p-4 flex items-center space-x-3 w-44 z-20 rotate-[-3deg] hover:rotate-0 transition-transform duration-300">
-              <div className="w-10 h-10 bg-rose-100 rounded-xl flex items-center justify-center shrink-0">
-                <Monitor className="h-5 w-5 text-rose-500" />
-              </div>
-              <div>
-                <div className="text-sm font-semibold text-gray-800">Web Design</div>
-                <div className="text-xs text-gray-400">Custom Sites</div>
-              </div>
-            </div>
-
-            {/* Mobile Apps card — top right */}
-            <div className="absolute top-10 right-2 bg-white rounded-2xl shadow-lg shadow-violet-100 border border-gray-100 p-4 flex items-center space-x-3 w-44 z-20 rotate-[3deg] hover:rotate-0 transition-transform duration-300">
-              <div className="w-10 h-10 bg-violet-100 rounded-xl flex items-center justify-center shrink-0">
-                <Smartphone className="h-5 w-5 text-violet-500" />
-              </div>
-              <div>
-                <div className="text-sm font-semibold text-gray-800">Mobile Apps</div>
-                <div className="text-xs text-gray-400">iOS & Android</div>
-              </div>
-            </div>
-
-            {/* Marketing card — bottom left */}
-            <div className="absolute bottom-12 left-2 bg-white rounded-2xl shadow-lg shadow-emerald-100 border border-gray-100 p-4 flex items-center space-x-3 w-44 z-20 rotate-[2deg] hover:rotate-0 transition-transform duration-300">
-              <div className="w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center shrink-0">
-                <TrendingUp className="h-5 w-5 text-emerald-500" />
-              </div>
-              <div>
-                <div className="text-sm font-semibold text-gray-800">Marketing</div>
-                <div className="text-xs text-gray-400">3× Growth</div>
-              </div>
-            </div>
-
-            {/* Rating badge — bottom right */}
-            <div className="absolute bottom-8 right-4 bg-gradient-to-br from-rose-500 to-violet-600 rounded-2xl shadow-lg shadow-rose-200 p-4 text-white w-40 z-20 rotate-[-2deg] hover:rotate-0 transition-transform duration-300">
-              <div className="text-2xl font-bold">4.9 ★</div>
-              <div className="text-xs text-white/80 mt-1">Client Rating</div>
-              <div className="flex gap-1 mt-2">
-                {[...Array(5)].map((_, i) => (
-                  <div key={i} className="w-3 h-3 bg-white/40 rounded-full" />
-                ))}
-              </div>
+            <div className="absolute -bottom-5 left-6 right-6 hidden sm:grid grid-cols-3 divide-x divide-gray-100 rounded-lg bg-white text-gray-900 shadow-xl shadow-rose-100">
+              {[
+                { label: 'eCommerce', value: 'Stores' },
+                { label: 'Web Apps', value: 'Custom' },
+                { label: 'Marketing', value: 'Growth' },
+              ].map((item) => (
+                <div key={item.label} className="px-4 py-3 text-center">
+                  <div className="text-sm font-bold">{item.value}</div>
+                  <div className="text-xs text-gray-500">{item.label}</div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
       {/* ── Stats ───────────────────────────────────────── */}
-      <section className="bg-white py-14 border-b border-gray-100">
+      <section className="bg-white py-8 border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 divide-x-0 md:divide-x divide-gray-100 border border-gray-100 rounded-lg bg-white shadow-sm">
             {stats.map((stat) => (
-              <div key={stat.label} className="text-center group">
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-rose-50 rounded-2xl mb-3 group-hover:bg-rose-100 transition-colors duration-200 mx-auto">
-                  <stat.icon className="h-5 w-5 text-rose-600" />
+              <div key={stat.label} className="p-6 text-center group">
+                <div className="inline-flex items-center justify-center w-11 h-11 bg-rose-50 rounded-md mb-3 group-hover:bg-violet-50 transition-colors duration-200 mx-auto">
+                  <stat.icon className="h-5 w-5 text-rose-600 group-hover:text-violet-600" />
                 </div>
                 <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-rose-600 to-violet-600 bg-clip-text text-transparent mb-1">
                   {stat.value}
@@ -350,89 +302,65 @@ export default function Home() {
       </section>
 
       {/* ── Services ────────────────────────────────────── */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-10 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="text-rose-600 font-semibold text-xs uppercase tracking-widest">
-              What We Do
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-4">
-              Our Core Services
-            </h2>
-            <p className="text-lg text-gray-500 max-w-2xl mx-auto">
-              End-to-end digital solutions built to help your business thrive in
-              the modern world
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {services.map((service) => (
-              <div
-                key={service.title}
-                className={`bg-white rounded-3xl p-8 shadow-sm border border-gray-100 ${service.hoverBorder} hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group`}
-              >
-                <div
-                  className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
-                >
-                  <service.icon className="h-7 w-7 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-gray-500 mb-6 leading-relaxed text-sm">
-                  {service.description}
-                </p>
-                <ul className="space-y-2 mb-8">
-                  {service.features.map((feature) => (
-                    <li
-                      key={feature}
-                      className="flex items-center space-x-2.5 text-sm text-gray-600"
-                    >
-                      <div className="w-4 h-4 bg-rose-100 rounded-full flex items-center justify-center shrink-0">
-                        <Check className="h-2.5 w-2.5 text-rose-600" />
-                      </div>
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  href={service.href}
-                  className="inline-flex items-center space-x-1.5 text-rose-600 font-semibold text-sm group/link"
-                >
-                  <span>Learn more</span>
-                  <ArrowRight className="h-4 w-4 group-hover/link:translate-x-1 transition-transform duration-200" />
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Technologies ────────────────────────────────── */}
-      <section className="py-16 bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
-            <div>
-              <span className="text-rose-600 font-semibold text-xs uppercase tracking-widest">
-                Technologies
-              </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
-                Tools we build with
+          <div className="grid lg:grid-cols-[0.85fr_1.15fr] gap-14 items-start">
+            <div className="lg:sticky lg:top-24">
+              {/* <span className="text-rose-600 font-semibold text-xs uppercase tracking-widest">
+                Our Expertise
+              </span> */}
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mt-3 mb-5 leading-tight">
+                Strategy, design and engineering under one roof
               </h2>
+              <p className="text-lg text-gray-500 leading-relaxed mb-8">
+                We turn scattered digital requirements into clear launches: beautiful frontends, solid backend systems, app experiences, and marketing funnels that can scale.
+              </p>
+              <Link
+                href="/services"
+                className="inline-flex items-center space-x-2 bg-gradient-to-r from-rose-600 to-violet-600 text-white px-6 py-3 rounded-md text-sm font-bold hover:shadow-lg hover:shadow-rose-200 transition-all duration-300"
+              >
+                <span>Explore Services</span>
+                <ArrowRight className="h-4 w-4" />
+              </Link>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:min-w-[680px]">
-              {technologies.map((tech) => (
+            <div className="grid grid-cols-1 gap-5">
+              {services.map((service, index) => (
                 <div
-                  key={tech.name}
-                  className={`bg-white border border-gray-100 rounded-2xl px-4 py-5 shadow-sm ${tech.border} hover:shadow-lg transition-all duration-300 text-center`}
+                  key={service.title}
+                  className="group grid sm:grid-cols-[auto_1fr_auto] gap-5 items-start bg-white border border-gray-100 rounded-lg p-6 shadow-sm hover:shadow-xl hover:border-rose-100 transition-all duration-300"
                 >
                   <div
-                    className={`mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-2xl ${tech.color} text-sm font-bold`}
+                    className={`w-14 h-14 rounded-md bg-gradient-to-br ${service.color} flex items-center justify-center shadow-lg`}
                   >
-                    {tech.mark}
+                    <service.icon className="h-7 w-7 text-white" />
                   </div>
-                  <div className="text-sm font-bold text-gray-900">{tech.name}</div>
+                  <div>
+                    <div className="text-xs font-bold text-gray-400 mb-2">0{index + 1}</div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-500 leading-relaxed text-sm mb-4">
+                      {service.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {service.features.slice(0, 3).map((feature) => (
+                        <span
+                          key={feature}
+                          className="bg-gray-50 border border-gray-100 text-gray-600 text-xs px-3 py-1 rounded-md font-medium"
+                        >
+                          {feature}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <Link
+                    href={service.href}
+                    aria-label={`Learn more about ${service.title}`}
+                    className="hidden sm:flex h-10 w-10 items-center justify-center rounded-md border border-gray-200 text-gray-500 group-hover:border-rose-300 group-hover:text-rose-600 group-hover:bg-rose-50 transition-colors duration-300"
+                  >
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
                 </div>
               ))}
             </div>
@@ -440,14 +368,42 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Technologies ────────────────────────────────── */}
+      <section className="py-8 bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            {/* <span className="text-rose-600 font-semibold text-xs uppercase tracking-widest">
+              Technologies We Work With
+            </span> */}
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+            {technologies.map((tech) => (
+              <div
+                key={tech.name}
+                className="bg-white border border-gray-200 min-h-[128px] px-6 py-7 flex flex-col items-center justify-center gap-4 hover:border-rose-200 hover:shadow-lg hover:shadow-rose-100/70 transition-all duration-300"
+              >
+                <img
+                  src={tech.logo}
+                  alt={`${tech.name} logo`}
+                  className="h-11 max-w-[150px] object-contain"
+                  loading="lazy"
+                />
+                <span className="text-sm font-semibold text-gray-700">{tech.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── Portfolio Preview ────────────────────────────── */}
-      <section className="py-24 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-14">
             <div>
-              <span className="text-rose-600 font-semibold text-xs uppercase tracking-widest">
+              {/* <span className="text-rose-600 font-semibold text-xs uppercase tracking-widest">
                 Our Work
-              </span>
+              </span> */}
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mt-2">
                 Recent Projects
               </h2>
@@ -486,12 +442,12 @@ export default function Home() {
       </section>
 
       {/* ── Testimonials ─────────────────────────────────── */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-10 bg-gray-50">
+        <div className="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <span className="text-rose-600 font-semibold text-xs uppercase tracking-widest">
+            {/* <span className="text-rose-600 font-semibold text-xs uppercase tracking-widest">
               Testimonials
-            </span>
+            </span> */}
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-3">
               What Clients Say
             </h2>
@@ -531,7 +487,7 @@ export default function Home() {
                 Ready to grow?
               </span>
 
-              <h2 className="text-4xl md:text-5xl font-bold mb-5 leading-tight text-white">
+              <h2 className="text-4xl md:text-5xl font-bold mb-2 leading-tight text-white">
                 Let&apos;s Build Something{' '}
                 <span className="text-yellow-300">Amazing Together</span>
               </h2>
