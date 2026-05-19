@@ -43,6 +43,39 @@ const services = [
   },
 ];
 
+const technologies = [
+  {
+    name: 'Next.js',
+    mark: 'N',
+    color: 'bg-gray-950 text-white',
+    border: 'hover:border-gray-300',
+  },
+  {
+    name: 'Node.js',
+    mark: 'JS',
+    color: 'bg-emerald-600 text-white',
+    border: 'hover:border-emerald-200',
+  },
+  {
+    name: 'AWS',
+    mark: 'AWS',
+    color: 'bg-orange-500 text-white',
+    border: 'hover:border-orange-200',
+  },
+  {
+    name: 'Flutter',
+    mark: 'F',
+    color: 'bg-sky-500 text-white',
+    border: 'hover:border-sky-200',
+  },
+  {
+    name: 'Shopify',
+    mark: 'S',
+    color: 'bg-lime-600 text-white',
+    border: 'hover:border-lime-200',
+  },
+];
+
 const portfolioItems = [
   {
     title: 'The1Wish — eCommerce',
@@ -375,6 +408,38 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Technologies ────────────────────────────────── */}
+      <section className="py-16 bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+            <div>
+              <span className="text-rose-600 font-semibold text-xs uppercase tracking-widest">
+                Technologies
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
+                Tools we build with
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:min-w-[680px]">
+              {technologies.map((tech) => (
+                <div
+                  key={tech.name}
+                  className={`bg-white border border-gray-100 rounded-2xl px-4 py-5 shadow-sm ${tech.border} hover:shadow-lg transition-all duration-300 text-center`}
+                >
+                  <div
+                    className={`mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-2xl ${tech.color} text-sm font-bold`}
+                  >
+                    {tech.mark}
+                  </div>
+                  <div className="text-sm font-bold text-gray-900">{tech.name}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── Portfolio Preview ────────────────────────────── */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -396,49 +461,24 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4">
             {portfolioItems.map((item) => (
               <a
                 href={'url' in item && item.url ? item.url : '/portfolio'}
                 key={item.title}
                 target={'url' in item && item.url ? '_blank' : undefined}
                 rel={'url' in item && item.url ? 'noopener noreferrer' : undefined}
-                className="group relative overflow-hidden rounded-2xl cursor-pointer block transition-transform duration-300 hover:scale-[1.03] hover:shadow-2xl"
-                style={{ aspectRatio: '4/3' }}
+                className="group block overflow-hidden bg-white"
+                aria-label={`View ${item.title}`}
               >
                 {'image' in item && item.image ? (
-                  <>
-                    <div
-                      className="absolute inset-0 transition-transform duration-500 group-hover:scale-105"
-                      style={{ backgroundImage: `url(${item.image})`, backgroundSize: 'cover', backgroundPosition: 'top center' }}
-                    />
-                    <div className="absolute inset-0 bg-black/30 group-hover:bg-black/0 transition-colors duration-400" />
-                  </>
+                  <div
+                    className="aspect-[1.42/1] bg-cover bg-top transition-transform duration-300 group-hover:scale-[1.02]"
+                    style={{ backgroundImage: `url(${item.image})` }}
+                  />
                 ) : (
-                  <>
-                    <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} transition-transform duration-500 group-hover:scale-105`} />
-                    <div className="absolute inset-0 bg-black/25 group-hover:bg-black/0 transition-colors duration-400" />
-                  </>
+                  <div className={`aspect-[1.42/1] bg-gradient-to-br ${item.gradient} transition-transform duration-300 group-hover:scale-[1.02]`} />
                 )}
-                {/* Pattern overlay */}
-                <div
-                  className="absolute inset-0 opacity-10"
-                  style={{
-                    backgroundImage:
-                      'radial-gradient(circle at 20% 20%, white 1px, transparent 1px), radial-gradient(circle at 80% 80%, white 1px, transparent 1px)',
-                    backgroundSize: '30px 30px',
-                  }}
-                />
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="text-xl font-bold mb-1.5">{item.title}</h3>
-                  <div className="flex items-center space-x-1.5 text-sm text-white/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <Trophy className="h-3.5 w-3.5" />
-                    <span>{item.result}</span>
-                  </div>
-                </div>
-                <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm p-2 rounded-full opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 transition-all duration-300">
-                  <ArrowRight className="h-4 w-4 text-white" />
-                </div>
               </a>
             ))}
           </div>

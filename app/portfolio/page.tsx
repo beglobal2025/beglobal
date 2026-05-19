@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
-import { ArrowRight, Trophy, ExternalLink } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 type Category = 'All' | 'Web Development' | 'Mobile App' | 'Digital Marketing';
@@ -9,6 +9,35 @@ type Category = 'All' | 'Web Development' | 'Mobile App' | 'Digital Marketing';
 const categories: Category[] = ['All', 'Web Development', 'Mobile App', 'Digital Marketing'];
 
 const projects = [
+
+   {
+    id: 1,
+    title: 'ShopNow — eCommerce Platform',
+    client: 'Fashion Retailer, Delhi',
+    category: 'Web Development' as Category,
+    description:
+      'A full-featured eCommerce store with product management, Razorpay payment gateway, admin dashboard, and inventory tracking.',
+    tags: ['Next.js', 'Node.js', 'PostgreSQL', 'Admin Panel'],
+    gradient: 'from-pink-500 to-rose-600',
+    image: '/hellinn.png',
+    result: '3× increase in online sales',
+    duration: '4 weeks',
+    url: 'https://www.hellinnwood.com/',
+  },
+   {
+    id: 2,
+    title: 'ShopNow — eCommerce Platform',
+    client: 'Fashion Retailer, Delhi',
+    category: 'Web Development' as Category,
+    description:
+      'A full-featured eCommerce store with product management, Razorpay payment gateway, admin dashboard, and inventory tracking.',
+    tags: ['Shopify', 'Razorpay', 'Admin Dashboard', 'Mobile Responsive'],
+    gradient: 'from-pink-500 to-rose-600',
+    image: '/gamedev.png',
+    result: '3× increase in online sales',
+    duration: '4 weeks',
+    url: 'https://www.gamedev.com',
+  },
   {
     id: 10,
     title: 'The1Wish — eCommerce Platform',
@@ -93,18 +122,7 @@ const projects = [
     duration: '4 weeks',
     url: 'https://quickproaus.com',
   },
-  {
-    id: 1,
-    title: 'ShopNow — eCommerce Platform',
-    client: 'Fashion Retailer, Delhi',
-    category: 'Web Development' as Category,
-    description:
-      'A full-featured eCommerce store with product management, Razorpay payment gateway, admin dashboard, and inventory tracking.',
-    tags: ['Next.js', 'Node.js', 'MongoDB', 'Razorpay'],
-    gradient: 'from-pink-500 to-rose-600',
-    result: '3× increase in online sales',
-    duration: '4 weeks',
-  },
+ 
   {
     id: 2,
     title: 'QuickBite — Restaurant Platform',
@@ -208,6 +226,7 @@ export default function Portfolio() {
 
   const filtered =
     active === 'All' ? projects : projects.filter((p) => p.category === active);
+  const imageProjects = filtered.filter((project) => 'image' in project && project.image);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -238,16 +257,16 @@ export default function Portfolio() {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Filter tabs */}
-          <div className="flex flex-wrap justify-center gap-3 mb-14">
+          <div className="flex flex-wrap justify-center gap-3 mb-7">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActive(cat)}
                 className={cn(
-                  'px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200',
+                  'px-5 py-3 rounded-md text-sm font-bold uppercase transition-all duration-200',
                   active === cat
-                    ? 'bg-gradient-to-r from-rose-600 to-violet-600 text-white shadow-lg shadow-rose-200'
-                    : 'bg-white text-gray-600 border border-gray-200 hover:border-rose-300 hover:text-rose-600'
+                    ? 'bg-black text-white'
+                    : 'bg-cyan-400 text-white hover:bg-cyan-500'
                 )}
               >
                 {cat}
@@ -255,103 +274,22 @@ export default function Portfolio() {
             ))}
           </div>
 
-          {/* Project count */}
-          <p className="text-center text-gray-400 text-sm mb-10">
-            Showing <span className="text-gray-700 font-semibold">{filtered.length}</span> project
-            {filtered.length !== 1 ? 's' : ''}
-          </p>
-
           {/* Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filtered.map((project) => (
-              <div
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4">
+            {imageProjects.map((project) => (
+              <a
                 key={project.id}
-                className="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl hover:border-rose-100 transition-all duration-300 hover:-translate-y-1 group flex flex-col"
+                href={project.url || '#'}
+                target={project.url ? '_blank' : undefined}
+                rel={project.url ? 'noopener noreferrer' : undefined}
+                className="group block overflow-hidden bg-white"
+                aria-label={project.url ? `View ${project.title}` : project.title}
               >
-                {/* Thumbnail */}
                 <div
-                  className="h-44 relative overflow-hidden"
-                  style={
-                    'image' in project && project.image
-                      ? { backgroundImage: `url(${project.image})`, backgroundSize: 'cover', backgroundPosition: 'top center' }
-                      : undefined
-                  }
-                >
-                  {'image' in project && project.image ? (
-                    <div className="absolute inset-0 bg-black/20" />
-                  ) : (
-                    <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient}`} />
-                  )}
-                  {'url' in project && project.url && (
-                    <a
-                      href={project.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="absolute top-4 left-4 flex items-center space-x-1.5 bg-white/20 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded-full border border-white/30 hover:bg-white/35 transition-colors duration-200 z-10"
-                    >
-                      <ExternalLink className="h-3 w-3" />
-                      <span>View Live</span>
-                    </a>
-                  )}
-                  <div
-                    className="absolute inset-0 opacity-10"
-                    style={{
-                      backgroundImage:
-                        'radial-gradient(circle at 25% 25%, white 1.5px, transparent 1.5px), radial-gradient(circle at 75% 75%, white 1.5px, transparent 1.5px)',
-                      backgroundSize: '28px 28px',
-                    }}
-                  />
-                  <div className="absolute bottom-4 left-4">
-                    <span className="inline-block bg-white/20 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1 rounded-full border border-white/25">
-                      {project.category}
-                    </span>
-                  </div>
-                  <div className="absolute top-4 right-4 flex items-center space-x-1.5 bg-white/20 backdrop-blur-sm text-white text-xs px-2.5 py-1 rounded-full border border-white/25">
-                    <Trophy className="h-3 w-3" />
-                    <span>{project.result}</span>
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="p-6 flex flex-col flex-1">
-                  <div className="flex justify-between items-start mb-2">
-                    <h3 className="text-lg font-bold text-gray-900 leading-tight flex-1 pr-2">
-                      {project.title}
-                    </h3>
-                  </div>
-                  <p className="text-rose-600 text-xs font-semibold mb-3">{project.client}</p>
-                  <p className="text-gray-500 text-sm leading-relaxed mb-5 flex-1">
-                    {project.description}
-                  </p>
-
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-1.5 mb-5">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-lg font-medium"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Footer */}
-                  <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                    <span className="text-xs text-gray-400">
-                      Delivered in <span className="font-medium text-gray-600">{project.duration}</span>
-                    </span>
-                    <Link
-                      href="/contact"
-                      className="inline-flex items-center space-x-1 text-rose-600 text-xs font-semibold group/btn"
-                    >
-                      <span>Similar project?</span>
-                      <ArrowRight className="h-3.5 w-3.5 group-hover/btn:translate-x-0.5 transition-transform duration-200" />
-                    </Link>
-                  </div>
-                </div>
-              </div>
+                  className="aspect-[1.42/1] bg-cover bg-top transition-transform duration-300 group-hover:scale-[1.02]"
+                  style={{ backgroundImage: `url(${project.image})` }}
+                />
+              </a>
             ))}
           </div>
         </div>
