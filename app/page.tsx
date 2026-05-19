@@ -92,10 +92,6 @@ const portfolioItems = [
     image: '/freshypainting.png',
     url: 'https://freshypainting.com/',
   },
-
-
-
-
   {
     title: 'Gamev',
     category: 'Web Development',
@@ -112,15 +108,15 @@ const portfolioItems = [
     image: '/blasbloom.png',
     url: 'https://blasbloomglobals.com/',
   },
-
   {
-    title: 'Hassle Free Car Rentals',
-    category: 'Web Development',
-    result: '500+ happy customers',
-    gradient: 'from-sky-500 to-blue-600',
-    image: '/hasslefreecarrentals.png',
-    url: 'https://hasslefreecarrentals.ca',
-  },
+
+    title: 'Hellinn',
+    category: 'Web Development' as Category,
+    gradient: 'from-pink-500 to-rose-600',
+    image: '/hellinn.png',
+    result: '3× increase in online sales',
+    url: 'https://www.hellinnwood.com/',
+  }
 ];
 
 const testimonials = [
@@ -141,7 +137,7 @@ const testimonials = [
     rating: 5,
     initial: 'K',
     color: 'bg-orange-500',
-  },  
+  },
   {
     name: 'Akanksha',
     role: 'Owner, Blas Bloom Globals',

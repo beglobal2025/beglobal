@@ -80,20 +80,20 @@ const projects = [
     duration: '3 weeks',
     url: 'https://freshypainting.com/',
   },
-  {
-    id: 15,
-    title: 'Hassle Free Car Rentals — Business Website',
-    client: 'hasslefreecarrentals.ca',
-    category: 'Web Development' as Category,
-    description:
-      'Business website for a locally-owned Canadian car rental company serving British Columbia, featuring vehicle listings, online booking, add-on services, and 24/7 support info.',
-    tags: ['Business Website', 'Booking System', 'Service Listings', 'Mobile Responsive'],
-    gradient: 'from-sky-500 to-blue-600',
-    image: '/hasslefreecarrentals.png',
-    result: '500+ happy customers',
-    duration: '3 weeks',
-    url: 'https://hasslefreecarrentals.ca',
-  },
+  // {
+  //   id: 15,
+  //   title: 'Hassle Free Car Rentals — Business Website',
+  //   client: 'hasslefreecarrentals.ca',
+  //   category: 'Web Development' as Category,
+  //   description:
+  //     'Business website for a locally-owned Canadian car rental company serving British Columbia, featuring vehicle listings, online booking, add-on services, and 24/7 support info.',
+  //   tags: ['Business Website', 'Booking System', 'Service Listings', 'Mobile Responsive'],
+  //   gradient: 'from-sky-500 to-blue-600',
+  //   image: '/hasslefreecarrentals.png',
+  //   result: '500+ happy customers',
+  //   duration: '3 weeks',
+  //   url: 'https://hasslefreecarrentals.ca',
+  // },
   {
     id: 14,
     title: 'Quickpro — eCommerce Store',
@@ -243,16 +243,16 @@ export default function Portfolio() {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Filter tabs */}
-          <div className="flex flex-wrap justify-center gap-3 mb-7">
+          <div className="flex flex-wrap justify-center gap-3 mb-14">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActive(cat)}
                 className={cn(
-                  'px-5 py-3 rounded-md text-sm font-bold uppercase transition-all duration-200',
+                  'px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200',
                   active === cat
-                    ? 'bg-black text-white'
-                    : 'bg-cyan-400 text-white hover:bg-cyan-500'
+                    ? 'bg-gradient-to-r from-rose-600 to-violet-600 text-white shadow-lg shadow-rose-200'
+                    : 'bg-white text-gray-600 border border-gray-200 hover:border-rose-300 hover:text-rose-600'
                 )}
               >
                 {cat}
