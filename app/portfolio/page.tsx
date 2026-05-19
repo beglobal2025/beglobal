@@ -67,20 +67,6 @@ const projects = [
     url: 'https://blasbloomglobals.com/',
   },
   {
-    id: 12,
-    title: 'Nocord — eCommerce Store',
-    client: 'nocord.in',
-    category: 'Web Development' as Category,
-    description:
-      'Modern eCommerce website for a hydration products brand with product listings, cart & checkout, clean UI, and mobile-friendly design.',
-    tags: ['eCommerce', 'Product Catalogue', 'Payment Gateway', 'Mobile Responsive'],
-    gradient: 'from-slate-600 to-gray-800',
-    image: '/nocord.png',
-    result: 'Live & growing',
-    duration: '4 weeks',
-    url: 'https://nocord.in/',
-  },
-  {
     id: 11,
     title: 'Freshy Painting — Business Website',
     client: 'freshypainting.com',
