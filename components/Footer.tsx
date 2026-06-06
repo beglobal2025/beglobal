@@ -20,7 +20,7 @@ const company = [
 const socialLinks = [
   {
     label: 'WhatsApp',
-    href: 'https://wa.me/919041078035',
+    href: 'https://wa.me/917740055607',
     icon: MessageCircle,
     color: 'hover:bg-green-600',
   },
@@ -32,7 +32,7 @@ const socialLinks = [
   },
   {
     label: 'Phone',
-    href: 'tel:9041078035',
+    href: 'tel:7740055607',
     icon: Phone,
     color: 'hover:bg-violet-600',
   },
@@ -159,7 +159,7 @@ export default function Footer() {
                 </div>
               </a>
 
-              <a href="tel:9041078035" className="flex items-start space-x-3 group">
+              <a href="tel:7740055607" className="flex items-start space-x-3 group">
                 <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-emerald-600 transition-colors duration-200 mt-0.5">
                   <Phone className="h-3.5 w-3.5 text-gray-400 group-hover:text-white" />
                 </div>
@@ -172,7 +172,7 @@ export default function Footer() {
               </a>
 
               <a
-                href="https://wa.me/919041078035"
+                href="https://wa.me/917740055607"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 mt-2 bg-[#25D366]/15 border border-[#25D366]/25 text-[#25D366] px-4 py-2.5 rounded-xl text-xs font-semibold hover:bg-[#25D366] hover:text-white transition-all duration-200"

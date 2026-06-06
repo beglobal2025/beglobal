@@ -206,7 +206,7 @@ function ContactForm() {
               </div>
             </a>
 
-            <a href="tel:9041078035" className="flex items-center space-x-4 group">
+            <a href="tel:7740055607" className="flex items-center space-x-4 group">
               <div className="w-11 h-11 bg-emerald-50 group-hover:bg-emerald-100 rounded-xl flex items-center justify-center transition-colors duration-200">
                 <Phone className="h-5 w-5 text-emerald-600" />
               </div>
@@ -231,7 +231,7 @@ function ContactForm() {
 
           {/* WhatsApp CTA */}
           <a
-            href="https://wa.me/919041078035"
+            href="https://wa.me/917740055607"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-6 flex items-center justify-center space-x-2 w-full bg-[#25D366] text-white py-3.5 rounded-xl font-semibold text-sm hover:bg-[#20BD5A] transition-colors duration-200"

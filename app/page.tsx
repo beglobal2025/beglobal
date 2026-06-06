@@ -501,7 +501,7 @@ export default function Home() {
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <a
-                  href="tel:9041078035"
+                  href="tel:7740055607"
                   className="inline-flex items-center justify-center border-2 border-white/40 text-white px-8 py-4 rounded-full text-base font-semibold hover:bg-white/10 transition-all duration-300"
                 >
                   Call: +91 90410 78035
