@@ -213,7 +213,7 @@ function ContactForm() {
               <div>
                 <div className="text-xs text-gray-400 font-medium mb-0.5">Phone / WhatsApp</div>
                 <div className="text-sm font-semibold text-gray-900 group-hover:text-brand-600 transition-colors duration-200">
-                  +91 90410 78035
+                  +91 77400 55607
                 </div>
               </div>
             </a>

@@ -145,7 +145,7 @@ export default function Footer() {
                 <div>
                   <div className="text-xs text-gray-500 mb-0.5">Phone / WhatsApp</div>
                   <div className="text-slate-700 text-sm group-hover:text-brand-700 transition-colors duration-200">
-                    +91 90410 78035
+                    +91 77400 55607
                   </div>
                 </div>
               </a>

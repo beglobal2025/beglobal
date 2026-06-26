@@ -242,7 +242,7 @@ export default function Home() {
         <div className="pointer-events-none absolute -right-24 -top-24 h-[420px] w-[420px] rounded-full bg-brand-100/40 blur-3xl" />
         <div className="pointer-events-none absolute -left-32 bottom-0 h-[360px] w-[360px] rounded-full bg-orange-100/40 blur-3xl" />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-16 lg:pt-24 lg:pb-24">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
           <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-16">
             {/* ── Left: Text ── */}
             <div className="max-w-xl">
@@ -447,7 +447,7 @@ export default function Home() {
       </section>
 
       {/* ── Services ────────────────────────────────────── */}
-      <section className="py-20 bg-white">
+      <section className="py-14 md:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="group flex flex-col items-start p-8 border border-slate-200 rounded-xl hover:border-emerald-300 hover:shadow-lg hover:-translate-y-2 transition-all duration-300 bg-gradient-to-br from-white to-slate-50/50 hover:bg-gradient-to-br hover:from-emerald-50 hover:to-emerald-100/40">
@@ -503,7 +503,7 @@ export default function Home() {
       </section>
 
       {/* ── Technologies ────────────────────────────────── */}
-      <section className="py-20 bg-slate-50 border-b border-slate-200">
+      <section className="py-14 md:py-16 bg-slate-50 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left side - Title, Description, and Grid */}
@@ -565,7 +565,7 @@ export default function Home() {
       </section>
 
       {/* ── Design & Development ────────────────────────── */}
-      <section className="py-20 bg-gradient-to-b from-white to-slate-50 border-b border-slate-200">
+      <section className="py-14 md:py-16 bg-gradient-to-b from-white to-slate-50 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left side - Illustration */}
@@ -634,7 +634,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-14 md:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
             <div>
@@ -675,53 +675,43 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Understanding Users ────────────────────────────── */}
-      <section className="py-20 bg-white border-b border-slate-100">
+      {/* ── Company Proof ──────────────────────────────────── */}
+      <section className="py-14 md:py-16 bg-white border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-950 mb-6 leading-tight">
-              We Always Try To Understand Users Expectation
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-950 mb-5 leading-tight">
+              Technology That Moves Your Business Forward
             </h2>
-            <div className="flex items-center justify-center gap-3 mb-8">
+            <div className="flex items-center justify-center gap-3 mb-6">
               <div className="h-1 w-10 bg-gradient-to-r from-green-400 to-brand-600 rounded-full" />
             </div>
             <p className="text-slate-600 text-lg leading-relaxed max-w-2xl mx-auto">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              From strategy and design to launch and ongoing support, we help ambitious businesses build digital products that perform.
             </p>
           </div>
 
           {/* Stats Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-green-500 mb-3">180K</div>
-              <p className="text-slate-600 text-sm font-medium">Downloaded</p>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-green-500 mb-3">20K</div>
-              <p className="text-slate-600 text-sm font-medium">Feedback</p>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-green-500 mb-3">500+</div>
-              <p className="text-slate-600 text-sm font-medium">Workers</p>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-green-500 mb-3">70+</div>
-              <p className="text-slate-600 text-sm font-medium">Contributors</p>
-            </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+            {stats.map((stat) => (
+              <div key={stat.label} className="text-center">
+                <div className="text-4xl md:text-5xl font-bold text-brand-700 mb-3">{stat.value}</div>
+                <p className="text-slate-600 text-sm font-medium">{stat.label}</p>
+              </div>
+            ))}
           </div>
 
           {/* CTA Section */}
-          <div className="flex flex-col md:flex-row items-center justify-center gap-8 pt-8 border-t border-slate-200">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 pt-8 border-t border-slate-200">
             <div>
-              <h3 className="text-xl font-semibold text-slate-950 mb-1">Have any question about us?</h3>
-              <p className="text-slate-600 text-sm">Don't hesitate to contact us</p>
+              <h3 className="text-xl font-semibold text-slate-950 mb-1">Have a project in mind?</h3>
+              <p className="text-slate-600 text-sm">Let&apos;s talk about the right solution for your business.</p>
             </div>
             <Link
               href="/contact"
               className="shrink-0 inline-flex items-center justify-center space-x-2 rounded-lg border border-brand-600 bg-brand-600 px-8 py-3 text-base font-bold text-white shadow-lg shadow-brand-200/70 transition-all duration-300 hover:bg-brand-700 hover:border-brand-700"
             >
-              <span>CONTACT US</span>
+              <span>START A PROJECT</span>
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -729,7 +719,7 @@ export default function Home() {
       </section>
 
       {/* ── Testimonials ─────────────────────────────────── */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-14 md:py-16 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-medium text-slate-950 mb-3 tracking-tight">
@@ -745,14 +735,14 @@ export default function Home() {
       </section>
 
       {/* ── CTA ──────────────────────────────────────────── */}
-      <section className="py-20 bg-gradient-to-b from-white to-slate-50 relative overflow-hidden">
+      <section className="py-14 md:py-16 bg-gradient-to-b from-white to-slate-50 relative overflow-hidden">
         {/* Decorative background accents */}
         <div className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-brand-100/30 blur-3xl" />
         <div className="pointer-events-none absolute -left-32 -bottom-32 h-80 w-80 rounded-full bg-orange-100/30 blur-3xl" />
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Card container */}
-          <div className="bg-gradient-to-br from-white to-slate-50 border border-slate-200/50 rounded-2xl px-8 py-16 text-center shadow-lg shadow-slate-200/30 overflow-hidden relative">
+          <div className="bg-gradient-to-br from-white to-slate-50 border border-slate-200/50 rounded-2xl px-8 py-12 text-center shadow-lg shadow-slate-200/30 overflow-hidden relative">
             <div className="relative">
               <span className="inline-block bg-gradient-to-r from-brand-50 to-blue-50 border border-brand-200 text-brand-700 text-xs font-semibold px-4 py-1.5 rounded-full mb-6 uppercase tracking-widest">
                 Ready to grow?
@@ -779,7 +769,7 @@ export default function Home() {
                   href="tel:7740055607"
                   className="inline-flex items-center justify-center border border-slate-300 bg-white text-slate-700 px-8 py-4 rounded-xl text-base font-semibold hover:border-brand-400 hover:bg-brand-50 hover:text-brand-700 transition-all duration-300"
                 >
-                  Call: +91 90410 78035
+                  Call: +91 77400 55607
                 </a>
               </div>
             </div>
