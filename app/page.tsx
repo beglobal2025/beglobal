@@ -237,10 +237,10 @@ export default function Home() {
   return (
     <div className="w-full">
       {/* ── Hero ─────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-white text-slate-950 border-b border-slate-100">
+      <section className="relative overflow-hidden bg-gradient-to-b from-white via-white to-slate-50 text-slate-950">
         {/* Soft background accents */}
-        <div className="pointer-events-none absolute -right-24 -top-24 h-[420px] w-[420px] rounded-full bg-brand-100/60 blur-3xl" />
-        <div className="pointer-events-none absolute -left-32 bottom-0 h-[360px] w-[360px] rounded-full bg-orange-100/50 blur-3xl" />
+        <div className="pointer-events-none absolute -right-24 -top-24 h-[420px] w-[420px] rounded-full bg-brand-100/40 blur-3xl" />
+        <div className="pointer-events-none absolute -left-32 bottom-0 h-[360px] w-[360px] rounded-full bg-orange-100/40 blur-3xl" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-16 lg:pt-24 lg:pb-24">
           <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-16">
@@ -253,7 +253,7 @@ export default function Home() {
                 </span>
               </div>
 
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight text-slate-950">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-[1.1] tracking-tight text-slate-950">
                 {slide.title}
               </h1>
 
@@ -328,55 +328,118 @@ export default function Home() {
               </div>
             </div>
 
-            {/* ── Right: Images ── */}
+            {/* ── Right: Graphics ── */}
             <div className="relative mx-auto w-full max-w-[560px]">
-              {/* Decorative blob behind images */}
+              {/* Decorative blob behind graphics */}
               <div
-                className="absolute inset-0 -z-10 rounded-[42%_58%_56%_44%/45%_45%_55%_55%] opacity-80"
-                style={{ backgroundColor: `${slide.accent}1a` }}
+                className="absolute inset-0 -z-10 rounded-[42%_58%_56%_44%/45%_45%_55%_55%] opacity-60"
+                style={{ backgroundColor: `${slide.accent}15` }}
               />
 
-              {/* Main image */}
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[28px] shadow-2xl shadow-slate-300/50">
-                <img
-                  src={slide.image}
-                  alt={slide.imageAlt}
-                  className="h-full w-full object-cover transition-transform duration-700"
-                  loading="eager"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/30 via-transparent to-transparent" />
+              {/* Main graphic - Device illustration */}
+              <div className="relative aspect-[4/5] overflow-hidden flex items-center justify-center">
+                {activeSlide === 0 && (
+                  <svg viewBox="0 0 400 500" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    {/* Laptop */}
+                    <rect x="40" y="40" width="320" height="240" rx="8" fill="white" stroke={slide.accent} strokeWidth="2"/>
+                    <rect x="50" y="50" width="300" height="220" fill={slide.accent} opacity="0.1"/>
+                    <rect x="40" y="280" width="320" height="16" rx="4" fill={slide.accent}/>
+                    <circle cx="200" cy="288" r="4" fill={slide.accent}/>
+                    {/* Screen content */}
+                    <line x1="70" y1="90" x2="330" y2="90" stroke={slide.accent} strokeWidth="2" opacity="0.3"/>
+                    <line x1="70" y1="110" x2="330" y2="110" stroke={slide.accent} strokeWidth="1.5" opacity="0.2"/>
+                    <line x1="70" y1="125" x2="330" y2="125" stroke={slide.accent} strokeWidth="1.5" opacity="0.2"/>
+                    <line x1="70" y1="140" x2="270" y2="140" stroke={slide.accent} strokeWidth="1.5" opacity="0.2"/>
+                    {/* Mobile phone */}
+                    <g transform="translate(260, 320)">
+                      <rect x="0" y="0" width="100" height="160" rx="8" fill="white" stroke={slide.accent} strokeWidth="2"/>
+                      <rect x="5" y="5" width="90" height="140" fill={slide.accent} opacity="0.1"/>
+                      <rect x="32" y="150" width="36" height="6" fill={slide.accent}/>
+                    </g>
+                  </svg>
+                )}
+                {activeSlide === 1 && (
+                  <svg viewBox="0 0 400 500" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    {/* Phone in hand */}
+                    <g transform="translate(100, 80)">
+                      <rect x="0" y="0" width="120" height="240" rx="16" fill="white" stroke={slide.accent} strokeWidth="2.5"/>
+                      <rect x="8" y="8" width="104" height="210" rx="12" fill={slide.accent} opacity="0.08"/>
+                      {/* Status bar */}
+                      <line x1="12" y1="18" x2="128" y2="18" stroke={slide.accent} strokeWidth="2" opacity="0.5"/>
+                      {/* App content */}
+                      <circle cx="60" cy="60" r="12" fill={slide.accent} opacity="0.3"/>
+                      <line x1="12" y1="80" x2="128" y2="80" stroke={slide.accent} strokeWidth="1.5" opacity="0.2"/>
+                      <line x1="12" y1="92" x2="128" y2="92" stroke={slide.accent} strokeWidth="1.5" opacity="0.2"/>
+                      <line x1="12" y1="104" x2="128" y2="104" stroke={slide.accent} strokeWidth="1.5" opacity="0.2"/>
+                      {/* Home indicator */}
+                      <line x1="50" y1="230" x2="70" y2="230" stroke={slide.accent} strokeWidth="2" opacity="0.4"/>
+                    </g>
+                    {/* Second phone */}
+                    <g transform="translate(200, 160)">
+                      <rect x="0" y="0" width="100" height="200" rx="12" fill="white" stroke={slide.accent} strokeWidth="2" opacity="0.6"/>
+                      <rect x="6" y="6" width="88" height="175" fill={slide.accent} opacity="0.05"/>
+                    </g>
+                  </svg>
+                )}
+                {activeSlide === 2 && (
+                  <svg viewBox="0 0 400 500" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    {/* Analytics Dashboard */}
+                    <rect x="30" y="40" width="340" height="280" rx="12" fill="white" stroke={slide.accent} strokeWidth="2"/>
+                    <rect x="40" y="50" width="320" height="260" fill={slide.accent} opacity="0.06" rx="8"/>
+                    {/* Header */}
+                    <line x1="40" y1="80" x2="360" y2="80" stroke={slide.accent} strokeWidth="2" opacity="0.3"/>
+                    <text x="50" y="70" fontSize="14" fill={slide.accent} opacity="0.6">Analytics</text>
+                    {/* Chart bars */}
+                    <rect x="50" y="150" width="20" height="100" fill={slide.accent} opacity="0.3" rx="2"/>
+                    <rect x="80" y="120" width="20" height="130" fill={slide.accent} opacity="0.5" rx="2"/>
+                    <rect x="110" y="100" width="20" height="150" fill={slide.accent} opacity="0.7" rx="2"/>
+                    <rect x="140" y="110" width="20" height="140" fill={slide.accent} opacity="0.6" rx="2"/>
+                    <rect x="170" y="90" width="20" height="160" fill={slide.accent} opacity="0.8" rx="2"/>
+                    {/* Trend line */}
+                    <polyline points="60,140 90,110 120,85 150,95 180,70" stroke={slide.accent} strokeWidth="2.5" opacity="0.7"/>
+                    {/* Metrics */}
+                    <circle cx="280" cy="140" r="30" fill={slide.accent} opacity="0.1" stroke={slide.accent} strokeWidth="2"/>
+                    <text x="268" y="148" fontSize="16" fontWeight="bold" fill={slide.accent}>+24%</text>
+                    <circle cx="320" cy="200" r="30" fill={slide.accent} opacity="0.1" stroke={slide.accent} strokeWidth="2"/>
+                    <text x="308" y="208" fontSize="16" fontWeight="bold" fill={slide.accent}>+18%</text>
+                  </svg>
+                )}
               </div>
 
-              {/* Floating secondary image card */}
-              <div className="absolute -bottom-8 -left-6 w-44 overflow-hidden rounded-2xl border-4 border-white bg-white shadow-xl shadow-slate-300/50 sm:w-52">
-                <img
-                  src={slide.secondaryImage}
-                  alt={slide.secondaryImageAlt}
-                  className="h-32 w-full object-cover sm:h-36"
-                  loading="lazy"
-                />
+              {/* Floating secondary card */}
+              <div className="absolute -bottom-6 -left-4 w-48 overflow-hidden rounded-xl bg-white shadow-lg shadow-slate-200/60 backdrop-blur sm:w-56 border border-white/50">
+                <div className="p-4 bg-gradient-to-br from-white to-slate-50">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ backgroundColor: `${slide.accent}20` }}>
+                      <div className="w-4 h-4 rounded-full" style={{ backgroundColor: slide.accent }}/>
+                    </div>
+                    <span className="text-xs font-bold uppercase text-slate-600">{slide.eyebrow}</span>
+                  </div>
+                  <p className="text-sm font-semibold text-slate-900">{slide.project}</p>
+                  <p className="text-xs text-slate-500 mt-2">Optimized for results</p>
+                </div>
               </div>
 
               {/* Floating service badge */}
-              <div className="absolute -right-4 top-8 flex items-center gap-3 rounded-2xl border border-slate-100 bg-white/95 px-4 py-3 shadow-xl shadow-slate-300/40 backdrop-blur">
+              <div className="absolute -right-2 top-12 flex items-center gap-3 rounded-full border border-white/60 bg-white/80 px-4 py-2.5 shadow-lg shadow-slate-200/50 backdrop-blur">
                 <div
-                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-white"
+                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-white"
                   style={{ backgroundColor: slide.accent }}
                 >
-                  <slide.icon className="h-5 w-5" />
+                  <slide.icon className="h-4 w-4" />
                 </div>
                 <div className="min-w-0">
-                  <div className="text-[10px] font-bold uppercase tracking-[0.16em] text-brand-700">
+                  <div className="text-[9px] font-bold uppercase tracking-[0.14em] text-brand-700">
                     {slide.eyebrow}
                   </div>
-                  <div className="text-sm font-semibold text-slate-950">{slide.project}</div>
+                  <div className="text-xs font-semibold text-slate-950">{slide.project}</div>
                 </div>
               </div>
 
               {/* Floating trust badge */}
-              <div className="absolute -right-2 bottom-12 flex items-center gap-2 rounded-full border border-slate-100 bg-white/95 px-4 py-2 shadow-lg shadow-slate-300/40 backdrop-blur">
-                <Check className="h-4 w-4 rounded-full bg-brand-50 p-0.5 text-brand-700" />
-                <span className="text-xs font-bold text-slate-700">Trusted by 150+ clients</span>
+              <div className="absolute -right-1 bottom-20 flex items-center gap-2 rounded-full border border-white/60 bg-white/80 px-3.5 py-2 shadow-md shadow-slate-200/50 backdrop-blur">
+                <Check className="h-3.5 w-3.5 rounded-full text-brand-700" />
+                <span className="text-xs font-semibold text-slate-700">150+ satisfied clients</span>
               </div>
             </div>
           </div>
@@ -384,35 +447,35 @@ export default function Home() {
       </section>
 
       {/* ── Services ────────────────────────────────────── */}
-      <section className="py-20 bg-white border-b border-slate-100">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="group flex flex-col items-start p-8 border border-slate-200 rounded-lg hover:border-emerald-300 hover:shadow-lg hover:-translate-y-2 transition-all duration-300">
+            <div className="group flex flex-col items-start p-8 border border-slate-200 rounded-xl hover:border-emerald-300 hover:shadow-lg hover:-translate-y-2 transition-all duration-300 bg-gradient-to-br from-white to-slate-50/50 hover:bg-gradient-to-br hover:from-emerald-50 hover:to-emerald-100/40">
               <div className="w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center mb-6 group-hover:bg-emerald-200 transition-colors duration-300">
                 <Monitor className="h-8 w-8 text-emerald-700" />
               </div>
-              <h3 className="text-lg font-semibold text-slate-950 mb-3">Web Development</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <h3 className="text-lg font-semibold text-slate-950 mb-3 group-hover:text-emerald-900 transition-colors duration-300">Web Development</h3>
+              <p className="text-slate-600 text-sm leading-relaxed group-hover:text-emerald-700 transition-colors duration-300">
                 Custom websites and web apps that look great, load fast, and turn visitors into paying customers.
               </p>
             </div>
 
-            <div className="group flex flex-col items-start p-8 border border-slate-200 rounded-lg hover:border-pink-300 hover:shadow-lg hover:-translate-y-2 transition-all duration-300">
+            <div className="group flex flex-col items-start p-8 border border-slate-200 rounded-xl hover:border-pink-300 hover:shadow-lg hover:-translate-y-2 transition-all duration-300 bg-gradient-to-br from-white to-slate-50/50 hover:bg-gradient-to-br hover:from-pink-50 hover:to-pink-100/40">
               <div className="w-16 h-16 rounded-full bg-pink-100 flex items-center justify-center mb-6 group-hover:bg-pink-200 transition-colors duration-300">
                 <Smartphone className="h-8 w-8 text-pink-700" />
               </div>
-              <h3 className="text-lg font-semibold text-slate-950 mb-3">Mobile Applications</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <h3 className="text-lg font-semibold text-slate-950 mb-3 group-hover:text-pink-900 transition-colors duration-300">Mobile Applications</h3>
+              <p className="text-slate-600 text-sm leading-relaxed group-hover:text-pink-700 transition-colors duration-300">
                 iOS and Android apps that users love. We build intuitive, fast, and feature-rich mobile experiences.
               </p>
             </div>
 
-            <div className="group flex flex-col items-start p-8 border border-slate-200 rounded-lg hover:border-purple-300 hover:shadow-lg hover:-translate-y-2 transition-all duration-300">
+            <div className="group flex flex-col items-start p-8 border border-slate-200 rounded-xl hover:border-purple-300 hover:shadow-lg hover:-translate-y-2 transition-all duration-300 bg-gradient-to-br from-white to-slate-50/50 hover:bg-gradient-to-br hover:from-purple-50 hover:to-purple-100/40">
               <div className="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center mb-6 group-hover:bg-purple-200 transition-colors duration-300">
                 <TrendingUp className="h-8 w-8 text-purple-700" />
               </div>
-              <h3 className="text-lg font-semibold text-slate-950 mb-3">Digital Marketing</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <h3 className="text-lg font-semibold text-slate-950 mb-3 group-hover:text-purple-900 transition-colors duration-300">Digital Marketing</h3>
+              <p className="text-slate-600 text-sm leading-relaxed group-hover:text-purple-700 transition-colors duration-300">
                 Data-driven campaigns that increase your visibility, attract the right customers, and grow your revenue.
               </p>
             </div>
@@ -477,15 +540,15 @@ export default function Home() {
 
             {/* Right side - Illustration */}
             <div className="relative flex justify-center">
-              <div className="relative w-full max-w-sm">
+              <div className="relative w-full max-w-3xl">
                 {/* Decorative background circles */}
-                <div className="absolute -top-8 -right-8 w-32 h-32 bg-blue-300/30 rounded-full blur-2xl" />
-                <div className="absolute -bottom-12 -left-8 w-40 h-40 bg-purple-300/20 rounded-full blur-3xl" />
+                <div className="absolute -top-12 -right-12 w-48 h-48 bg-blue-300/30 rounded-full blur-2xl" />
+                <div className="absolute -bottom-16 -left-12 w-56 h-56 bg-purple-300/20 rounded-full blur-3xl" />
 
                 {/* SVG Illustration */}
                 <div className="relative z-10">
                   <img
-                    src="/modern_tech_stack.svg"
+                    src="/modern_tech_stack.png"
                     alt="Modern Tech Stack"
                     className="w-full h-auto"
                   />
@@ -507,7 +570,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left side - Illustration */}
             <div className="relative flex justify-center">
-              <div className="relative w-full max-w-sm">
+              <div className="relative w-full max-w-3xl">
                 {/* Decorative background circles */}
                 <div className="absolute -top-16 -left-16 w-48 h-48 bg-purple-200/30 rounded-full blur-3xl" />
                 <div className="absolute -bottom-16 -right-16 w-56 h-56 bg-orange-200/30 rounded-full blur-3xl" />
@@ -515,9 +578,9 @@ export default function Home() {
                 {/* SVG Illustration */}
                 <div className="relative z-10">
                   <img
-                    src="/design_development.svg"
+                    src="/design_development_transparent.png"
                     alt="Design and Development"
-                    className="w-full h-auto"
+                    className="w-full h-auto mix-blend-multiply"
                   />
                 </div>
 
@@ -682,37 +745,39 @@ export default function Home() {
       </section>
 
       {/* ── CTA ──────────────────────────────────────────── */}
-      <section className="py-20 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none bg-white" />
+      <section className="py-20 bg-gradient-to-b from-white to-slate-50 relative overflow-hidden">
+        {/* Decorative background accents */}
+        <div className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-brand-100/30 blur-3xl" />
+        <div className="pointer-events-none absolute -left-32 -bottom-32 h-80 w-80 rounded-full bg-orange-100/30 blur-3xl" />
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Card container */}
-          <div className="bg-white border border-slate-200 rounded-lg px-8 py-16 text-center shadow-sm overflow-hidden relative">
+          <div className="bg-gradient-to-br from-white to-slate-50 border border-slate-200/50 rounded-2xl px-8 py-16 text-center shadow-lg shadow-slate-200/30 overflow-hidden relative">
             <div className="relative">
-              <span className="inline-block bg-white border border-slate-200 text-brand-700 text-xs font-bold px-4 py-1.5 rounded-md mb-6 uppercase tracking-widest">
+              <span className="inline-block bg-gradient-to-r from-brand-50 to-blue-50 border border-brand-200 text-brand-700 text-xs font-semibold px-4 py-1.5 rounded-full mb-6 uppercase tracking-widest">
                 Ready to grow?
               </span>
 
-              <h2 className="text-2xl md:text-3xl font-medium mb-3 leading-tight text-slate-950 tracking-tight">
+              <h2 className="text-3xl md:text-4xl font-semibold mb-4 leading-tight text-slate-950 tracking-tight">
                 Let&apos;s Build Something{' '}
-                <span className="text-brand-700">Amazing Together</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-brand-700">Amazing Together</span>
               </h2>
 
-              <p className="text-slate-600 text-lg mb-10 max-w-xl mx-auto">
+              <p className="text-slate-600 text-base md:text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
                 Get a free consultation and project quote. We respond within 24 hours.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center space-x-2 border border-[#f58220] bg-white text-gray-900 px-8 py-4 rounded-md text-base font-bold hover:text-[#f58220] transition-all duration-300"
+                  className="inline-flex items-center justify-center space-x-2 border border-[#f58220] bg-[#f58220] text-white px-8 py-4 rounded-xl text-base font-semibold shadow-lg shadow-orange-200/50 hover:shadow-orange-300/60 hover:scale-[1.02] transition-all duration-300"
                 >
                   <span>Get Free Quote</span>
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <a
                   href="tel:7740055607"
-                  className="inline-flex items-center justify-center border border-slate-300 text-slate-700 px-8 py-4 rounded-md text-base font-bold hover:border-brand-400 hover:text-brand-700 transition-all duration-300"
+                  className="inline-flex items-center justify-center border border-slate-300 bg-white text-slate-700 px-8 py-4 rounded-xl text-base font-semibold hover:border-brand-400 hover:bg-brand-50 hover:text-brand-700 transition-all duration-300"
                 >
                   Call: +91 90410 78035
                 </a>
