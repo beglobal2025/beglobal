@@ -17,36 +17,36 @@ const values = [
     icon: Target,
     title: 'Excellence First',
     desc: 'We never ship work we wouldn\'t be proud to show. Every pixel, every line of code, every campaign is crafted to the highest standard.',
-    color: 'from-blue-500 to-indigo-600',
-    bg: 'bg-blue-50',
+    color: 'bg-slate-900',
+    bg: 'bg-brand-50',
   },
   {
     icon: Lightbulb,
     title: 'Creative Thinking',
     desc: 'We approach every project fresh — no copy-paste templates. Your business is unique, and your digital presence should be too.',
-    color: 'from-amber-500 to-orange-600',
-    bg: 'bg-amber-50',
+    color: 'bg-slate-900',
+    bg: 'bg-brand-50',
   },
   {
     icon: Heart,
     title: 'Client Partnership',
     desc: 'We treat your business like our own. Long-term relationships built on trust, transparency, and genuine care for your growth.',
-    color: 'from-rose-500 to-pink-600',
-    bg: 'bg-rose-50',
+    color: 'bg-slate-900',
+    bg: 'bg-brand-50',
   },
   {
     icon: Globe,
     title: 'Growth Mindset',
     desc: 'We stay ahead of technology and trends so you always benefit from the latest tools, strategies, and best practices.',
-    color: 'from-emerald-500 to-teal-600',
-    bg: 'bg-emerald-50',
+    color: 'bg-slate-900',
+    bg: 'bg-brand-50',
   },
 ];
 
 const services = [
-  { icon: Monitor, label: 'Web Development', color: 'text-blue-600', bg: 'bg-blue-50' },
-  { icon: Smartphone, label: 'Mobile Apps', color: 'text-violet-600', bg: 'bg-violet-50' },
-  { icon: TrendingUp, label: 'Digital Marketing', color: 'text-emerald-600', bg: 'bg-emerald-50' },
+  { icon: Monitor, label: 'Web Development', color: 'text-brand-600', bg: 'bg-brand-50' },
+  { icon: Smartphone, label: 'Mobile Apps', color: 'text-brand-600', bg: 'bg-brand-50' },
+  { icon: TrendingUp, label: 'Digital Marketing', color: 'text-brand-600', bg: 'bg-brand-50' },
 ];
 
 const promises = [
@@ -62,22 +62,18 @@ export default function About() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* ── Hero ─────────────────────────────────────────── */}
-      <section className="relative bg-hero text-white py-24 overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -top-40 -right-40 w-[400px] h-[400px] bg-rose-600 rounded-full blur-3xl opacity-20" />
-          <div className="absolute -bottom-40 -left-40 w-[400px] h-[400px] bg-violet-700 rounded-full blur-3xl opacity-20" />
-        </div>
+      <section className="relative bg-white text-slate-950 py-24 overflow-hidden border-b border-slate-100">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="inline-block bg-white/10 border border-white/15 text-gray-200 text-xs font-semibold px-4 py-1.5 rounded-full mb-6 uppercase tracking-widest">
+          <span className="inline-block bg-brand-50 border border-brand-100 text-brand-700 text-xs font-semibold px-4 py-1.5 rounded-full mb-6 uppercase tracking-widest">
             About Us
           </span>
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+          <h1 className="text-3xl md:text-4xl font-medium mb-6">
             The Team Behind{' '}
-            <span className="bg-gradient-to-r from-pink-300 to-violet-400 bg-clip-text text-transparent">
+            <span className="text-brand-700">
               BeGlobal
             </span>
           </h1>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto text-gray-300 leading-relaxed">
+          <p className="text-lg md:text-xl max-w-2xl mx-auto text-slate-600 leading-relaxed">
             We&apos;re a passionate team of developers, designers, and marketers
             on a mission to help Indian businesses thrive in the digital world.
           </p>
@@ -90,7 +86,7 @@ export default function About() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((s) => (
               <div key={s.label} className="text-center">
-                <div className="text-4xl font-bold bg-gradient-to-r from-rose-600 to-violet-600 bg-clip-text text-transparent mb-1">
+                <div className="text-4xl font-bold text-brand-600 mb-1">
                   {s.value}
                 </div>
                 <div className="text-gray-500 text-sm font-medium">{s.label}</div>
@@ -105,8 +101,8 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="text-rose-600 font-semibold text-xs uppercase tracking-widest">Our Story</span>
-              <h2 className="text-4xl font-bold text-gray-900 mt-2 mb-6">
+              <span className="text-brand-600 font-semibold text-xs uppercase tracking-widest">Our Story</span>
+              <h2 className="text-2xl font-medium text-gray-900 mt-2 mb-6">
                 Built to Help Businesses Like Yours Grow
               </h2>
               <p className="text-gray-600 mb-5 leading-relaxed">
@@ -140,28 +136,28 @@ export default function About() {
 
             {/* Mission / Vision card */}
             <div className="space-y-6">
-              <div className="bg-gradient-to-br from-slate-900 to-indigo-950 p-8 rounded-3xl text-white">
+              <div className="bg-white border border-slate-200 p-8 rounded-3xl text-slate-950">
                 <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-10 h-10 bg-rose-600 rounded-xl flex items-center justify-center">
-                    <Target className="h-5 w-5 text-white" />
+                  <div className="w-10 h-10 bg-brand-50 border border-brand-100 rounded-xl flex items-center justify-center">
+                    <Target className="h-5 w-5 text-brand-700" />
                   </div>
-                  <h3 className="text-xl font-bold">Our Mission</h3>
+                  <h3 className="text-lg font-semibold">Our Mission</h3>
                 </div>
-                <p className="text-gray-300 leading-relaxed">
+                <p className="text-slate-600 leading-relaxed">
                   To empower every business — big or small — with world-class
                   digital tools, beautiful design, and marketing strategies that
                   deliver real, measurable results.
                 </p>
               </div>
 
-              <div className="bg-gradient-to-br from-rose-600 to-violet-700 p-8 rounded-3xl text-white">
+              <div className="bg-white border border-slate-200 p-8 rounded-3xl text-slate-950">
                 <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
-                    <Globe className="h-5 w-5 text-white" />
+                  <div className="w-10 h-10 bg-brand-50 border border-brand-100 rounded-xl flex items-center justify-center">
+                    <Globe className="h-5 w-5 text-brand-700" />
                   </div>
-                  <h3 className="text-xl font-bold">Our Vision</h3>
+                  <h3 className="text-lg font-semibold">Our Vision</h3>
                 </div>
-                <p className="text-rose-100 leading-relaxed">
+                <p className="text-slate-600 leading-relaxed">
                   A future where every Indian business has the digital presence
                   it deserves — where geography and budget are never a barrier
                   to growth.
@@ -176,8 +172,8 @@ export default function About() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <span className="text-rose-600 font-semibold text-xs uppercase tracking-widest">What We Stand For</span>
-            <h2 className="text-4xl font-bold text-gray-900 mt-2 mb-4">Our Core Values</h2>
+            <span className="text-brand-600 font-semibold text-xs uppercase tracking-widest">What We Stand For</span>
+            <h2 className="text-2xl font-medium text-gray-900 mt-2 mb-4">Our Core Values</h2>
             <p className="text-gray-500 max-w-xl mx-auto">
               These principles guide every decision we make and every project we deliver.
             </p>
@@ -187,12 +183,12 @@ export default function About() {
             {values.map((v) => (
               <div
                 key={v.title}
-                className="bg-white rounded-3xl p-7 shadow-sm border border-gray-100 hover:shadow-xl hover:border-rose-100 transition-all duration-300 hover:-translate-y-1 group text-center"
+                className="bg-white rounded-3xl p-7 shadow-sm border border-gray-100 hover:shadow-xl hover:border-brand-100 transition-all duration-300 hover:-translate-y-1 group text-center"
               >
-                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${v.color} flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                  <v.icon className="h-7 w-7 text-white" />
+                <div className="w-14 h-14 rounded-2xl bg-brand-50 border border-brand-100 flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform duration-300">
+                  <v.icon className="h-7 w-7 text-brand-700" />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3">{v.title}</h3>
+                <h3 className="text-base font-semibold text-gray-900 mb-3">{v.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{v.desc}</p>
               </div>
             ))}
@@ -205,8 +201,8 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="text-rose-600 font-semibold text-xs uppercase tracking-widest">Our Commitment</span>
-              <h2 className="text-4xl font-bold text-gray-900 mt-2 mb-6">
+              <span className="text-brand-600 font-semibold text-xs uppercase tracking-widest">Our Commitment</span>
+              <h2 className="text-2xl font-medium text-gray-900 mt-2 mb-6">
                 What You Can Always Expect From Us
               </h2>
               <p className="text-gray-500 mb-8 leading-relaxed">
@@ -216,15 +212,15 @@ export default function About() {
               <ul className="space-y-4">
                 {promises.map((p) => (
                   <li key={p} className="flex items-center space-x-3">
-                    <CheckCircle className="h-5 w-5 text-rose-600 shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-brand-600 shrink-0" />
                     <span className="text-gray-700 font-medium">{p}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="bg-gradient-to-br from-slate-950 to-indigo-950 rounded-3xl p-10 text-white">
-              <h3 className="text-2xl font-bold mb-8">Why Clients Stay With Us</h3>
+            <div className="bg-white border border-slate-200 rounded-3xl p-10 text-slate-950">
+              <h3 className="text-lg font-medium mb-8">Why Clients Stay With Us</h3>
               <div className="space-y-6">
                 {[
                   { pct: '97%', label: 'Client satisfaction rate' },
@@ -233,12 +229,12 @@ export default function About() {
                 ].map((item) => (
                   <div key={item.label}>
                     <div className="flex justify-between mb-2">
-                      <span className="text-gray-300 text-sm">{item.label}</span>
-                      <span className="text-white font-bold">{item.pct}</span>
+                      <span className="text-slate-500 text-sm">{item.label}</span>
+                      <span className="text-brand-700 font-bold">{item.pct}</span>
                     </div>
-                    <div className="h-2 bg-white/10 rounded-full overflow-hidden">
+                    <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
                       <div
-                        className="h-full bg-gradient-to-r from-rose-500 to-violet-500 rounded-full"
+                        className="h-full bg-brand-500 rounded-full"
                         style={{ width: item.pct }}
                       />
                     </div>
@@ -251,30 +247,26 @@ export default function About() {
       </section>
 
       {/* ── CTA ──────────────────────────────────────────── */}
-      <section className="py-20 bg-hero text-white relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-80 h-80 bg-rose-600 rounded-full blur-3xl opacity-15" />
-          <div className="absolute bottom-0 left-0 w-80 h-80 bg-violet-700 rounded-full blur-3xl opacity-15" />
-        </div>
+      <section className="py-20 bg-white text-slate-950 relative overflow-hidden border-t border-slate-100">
         <div className="relative max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-5">
+          <h2 className="text-2xl md:text-3xl font-medium mb-5">
             Ready to Partner With Us?
           </h2>
-          <p className="text-gray-300 text-lg mb-8">
+          <p className="text-slate-600 text-lg mb-8">
             Let&apos;s talk about your project and see how we can help your
             business grow.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-rose-600 to-violet-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-2xl hover:shadow-rose-500/40 hover:scale-105 transition-all duration-300"
+              className="inline-flex items-center justify-center space-x-2 border border-[#f58220] bg-white text-gray-900 px-8 py-4 rounded-full font-semibold hover:text-[#f58220] transition-all duration-300"
             >
               <span>Start a Conversation</span>
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               href="/portfolio"
-              className="inline-flex items-center justify-center border-2 border-white/25 text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-slate-900 transition-all duration-300"
+              className="inline-flex items-center justify-center border border-slate-300 text-slate-700 px-8 py-4 rounded-full font-semibold hover:border-brand-400 hover:text-brand-700 transition-all duration-300"
             >
               View Our Work
             </Link>

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Mail, Phone, MessageCircle, ArrowRight } from 'lucide-react';
+import { Mail, Phone, MessageCircle } from 'lucide-react';
 
 const services = [
   { label: 'Website Development', href: '/services' },
@@ -22,46 +22,25 @@ const socialLinks = [
     label: 'WhatsApp',
     href: 'https://wa.me/917740055607',
     icon: MessageCircle,
-    color: 'hover:bg-green-600',
+    color: 'hover:bg-brand-600',
   },
   {
     label: 'Email',
     href: 'mailto:beglobal025@gmail.com',
     icon: Mail,
-    color: 'hover:bg-rose-600',
+    color: 'hover:bg-brand-600',
   },
   {
     label: 'Phone',
     href: 'tel:7740055607',
     icon: Phone,
-    color: 'hover:bg-violet-600',
+    color: 'hover:bg-brand-600',
   },
 ];
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-950 text-white">
-      {/* Top CTA strip */}
-      <div className="bg-gradient-to-r from-rose-600 to-violet-700 py-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div>
-              <h3 className="text-2xl font-bold mb-1">Ready to start your project?</h3>
-              <p className="text-rose-100 text-sm">
-                Get a free quote and consultation — no commitment needed.
-              </p>
-            </div>
-            <Link
-              href="/contact"
-              className="shrink-0 flex items-center space-x-2 bg-white text-rose-700 px-7 py-3.5 rounded-full font-bold text-sm hover:shadow-xl hover:scale-105 transition-all duration-300"
-            >
-              <span>Get Free Quote</span>
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-        </div>
-      </div>
-
+    <footer className="bg-white text-slate-950 border-t border-slate-100">
       {/* Main footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -73,13 +52,13 @@ export default function Footer() {
                 alt="BeGlobal"
                 width={40}
                 height={40}
-                className="h-10 w-10 object-contain brightness-0 invert"
+                className="h-10 w-10 object-contain"
               />
-              <span className="text-xl font-bold">
-                <span className="text-rose-400">Be</span><span className="text-violet-400">Global</span>
+              <span className="text-xl font-extrabold tracking-tight">
+                <span className="text-[#153A5B]">Be</span><span className="text-[#8CCFE3]">Global</span>
               </span>
             </Link>
-            <p className="text-gray-400 text-sm leading-relaxed mb-6">
+            <p className="text-slate-600 text-sm leading-relaxed mb-6">
               We build websites, mobile apps, and run marketing campaigns
               that help Indian businesses grow faster and reach more customers.
             </p>
@@ -92,9 +71,9 @@ export default function Footer() {
                   target={s.href.startsWith('http') ? '_blank' : undefined}
                   rel={s.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                   aria-label={s.label}
-                  className={`w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center ${s.color} transition-colors duration-200`}
+                  className={`w-9 h-9 bg-white border border-slate-200 rounded-lg flex items-center justify-center ${s.color} group transition-colors duration-200`}
                 >
-                  <s.icon className="h-4 w-4 text-white" />
+                  <s.icon className="h-4 w-4 text-brand-700 group-hover:text-white" />
                 </a>
               ))}
             </div>
@@ -102,7 +81,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="text-sm font-bold uppercase tracking-widest text-gray-300 mb-5">
+            <h4 className="text-sm font-semibold uppercase tracking-widest text-brand-700 mb-5">
               Services
             </h4>
             <ul className="space-y-3">
@@ -110,7 +89,7 @@ export default function Footer() {
                 <li key={s.label}>
                   <Link
                     href={s.href}
-                    className="text-gray-400 hover:text-rose-400 text-sm transition-colors duration-200"
+                    className="text-slate-600 hover:text-brand-700 text-sm transition-colors duration-200"
                   >
                     {s.label}
                   </Link>
@@ -121,7 +100,7 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="text-sm font-bold uppercase tracking-widest text-gray-300 mb-5">
+            <h4 className="text-sm font-semibold uppercase tracking-widest text-brand-700 mb-5">
               Company
             </h4>
             <ul className="space-y-3">
@@ -129,7 +108,7 @@ export default function Footer() {
                 <li key={c.label}>
                   <Link
                     href={c.href}
-                    className="text-gray-400 hover:text-rose-400 text-sm transition-colors duration-200"
+                    className="text-slate-600 hover:text-brand-700 text-sm transition-colors duration-200"
                   >
                     {c.label}
                   </Link>
@@ -140,7 +119,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-sm font-bold uppercase tracking-widest text-gray-300 mb-5">
+            <h4 className="text-sm font-semibold uppercase tracking-widest text-brand-700 mb-5">
               Contact Us
             </h4>
             <div className="space-y-4">
@@ -148,24 +127,24 @@ export default function Footer() {
                 href="mailto:beglobal025@gmail.com"
                 className="flex items-start space-x-3 group"
               >
-                <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-rose-600 transition-colors duration-200 mt-0.5">
+                <div className="w-8 h-8 bg-white border border-slate-200 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-brand-600 transition-colors duration-200 mt-0.5">
                   <Mail className="h-3.5 w-3.5 text-gray-400 group-hover:text-white" />
                 </div>
                 <div>
                   <div className="text-xs text-gray-500 mb-0.5">Email</div>
-                  <div className="text-gray-300 text-sm group-hover:text-rose-400 transition-colors duration-200">
+                  <div className="text-slate-700 text-sm group-hover:text-brand-700 transition-colors duration-200">
                     beglobal025@gmail.com
                   </div>
                 </div>
               </a>
 
               <a href="tel:7740055607" className="flex items-start space-x-3 group">
-                <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-emerald-600 transition-colors duration-200 mt-0.5">
+                <div className="w-8 h-8 bg-white border border-slate-200 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-brand-600 transition-colors duration-200 mt-0.5">
                   <Phone className="h-3.5 w-3.5 text-gray-400 group-hover:text-white" />
                 </div>
                 <div>
                   <div className="text-xs text-gray-500 mb-0.5">Phone / WhatsApp</div>
-                  <div className="text-gray-300 text-sm group-hover:text-emerald-400 transition-colors duration-200">
+                  <div className="text-slate-700 text-sm group-hover:text-brand-700 transition-colors duration-200">
                     +91 90410 78035
                   </div>
                 </div>
@@ -175,7 +154,7 @@ export default function Footer() {
                 href="https://wa.me/917740055607"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-2 mt-2 bg-[#25D366]/15 border border-[#25D366]/25 text-[#25D366] px-4 py-2.5 rounded-xl text-xs font-semibold hover:bg-[#25D366] hover:text-white transition-all duration-200"
+                className="flex items-center space-x-2 mt-2 bg-white border border-brand-300 text-gray-900 px-4 py-2.5 rounded-xl text-xs font-semibold hover:border-brand-500 hover:text-brand-700 transition-all duration-200"
               >
                 <MessageCircle className="h-3.5 w-3.5" />
                 <span>Chat on WhatsApp</span>
@@ -186,7 +165,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-white/5 py-6">
+      <div className="border-t border-slate-100 py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-gray-500">
             <span>© 2026 BeGlobal. All rights reserved.</span>

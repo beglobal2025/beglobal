@@ -18,7 +18,7 @@ const projects = [
     description:
       'A full-featured eCommerce store with product management, Razorpay payment gateway, admin dashboard, and inventory tracking.',
     tags: ['Next.js', 'Node.js', 'Postgresql', 'Razorpay'],
-    gradient: 'from-pink-500 to-rose-600',
+    accent: 'bg-slate-200',
     image: '/hellinn.png',
     result: '3× increase in online sales',
     duration: '4 weeks',
@@ -32,7 +32,7 @@ const projects = [
     description:
       'A full-featured eCommerce store with product management, Razorpay payment gateway, admin dashboard, and inventory tracking.',
     tags: ['Shopify', 'Razorpay', 'Admin Dashboard', 'Mobile Responsive'],
-    gradient: 'from-pink-500 to-rose-600',
+    accent: 'bg-slate-200',
     image: '/gamedev.png',
     result: '3× increase in online sales',
     duration: '4 weeks',
@@ -46,7 +46,7 @@ const projects = [
     description:
       'A complete eCommerce website with product catalogue, cart & checkout, payment integration, and a clean mobile-friendly design to help the brand sell online.',
     tags: ['eCommerce', 'Payment Gateway', 'Admin Dashboard', 'Mobile Responsive'],
-    gradient: 'from-fuchsia-500 to-rose-600',
+    accent: 'bg-slate-200',
     image: '/the1wish.png',
     result: 'Live & selling online',
     duration: '4 weeks',
@@ -60,7 +60,7 @@ const projects = [
     description:
       'Business website for a natural & herbal products company based in Rajasthan, featuring a product catalogue, enquiry system, and GST-compliant business details.',
     tags: ['Business Website', 'Product Catalogue', 'Enquiry Form', 'Mobile Responsive'],
-    gradient: 'from-green-600 to-emerald-700',
+    accent: 'bg-slate-200',
     image: '/blasbloom.png',
     result: 'Live & growing',
     duration: '3 weeks',
@@ -74,7 +74,7 @@ const projects = [
     description:
       'Professional website for a painting services company featuring a portfolio gallery, free quote request form, and mobile-friendly design to attract local customers.',
     tags: ['Business Website', 'Portfolio Gallery', 'Contact Form', 'Mobile Responsive'],
-    gradient: 'from-orange-500 to-amber-600',
+    accent: 'bg-slate-200',
     image: '/freshypainting.png',
     result: 'Live & growing',
     duration: '3 weeks',
@@ -88,7 +88,7 @@ const projects = [
   //   description:
   //     'Business website for a locally-owned Canadian car rental company serving British Columbia, featuring vehicle listings, online booking, add-on services, and 24/7 support info.',
   //   tags: ['Business Website', 'Booking System', 'Service Listings', 'Mobile Responsive'],
-  //   gradient: 'from-sky-500 to-blue-600',
+  //   accent: 'bg-slate-200',
   //   image: '/hasslefreecarrentals.png',
   //   result: '500+ happy customers',
   //   duration: '3 weeks',
@@ -102,7 +102,7 @@ const projects = [
     description:
       'Premium racing bicycle eCommerce store for an Australian brand, featuring a full product catalogue, custom order system, complimentary delivery info, and a mobile-friendly design.',
     tags: ['eCommerce', 'Product Catalogue', 'Custom Orders', 'Mobile Responsive'],
-    gradient: 'from-blue-500 to-cyan-600',
+    accent: 'bg-slate-200',
     image: '/quickproaus.png',
     result: 'Live & selling online',
     duration: '4 weeks',
@@ -117,7 +117,7 @@ const projects = [
     description:
       'Online ordering platform with real-time order tracking, loyalty rewards, multi-branch management, and detailed analytics.',
     tags: ['React', 'Firebase', 'Stripe', 'Tailwind CSS'],
-    gradient: 'from-orange-500 to-amber-600',
+    accent: 'bg-slate-200',
     result: '60% reduction in phone orders',
     duration: '6 weeks',
   },
@@ -129,7 +129,7 @@ const projects = [
     description:
       'Enterprise client portal with role-based access, project tracking, invoicing module, and secure document sharing.',
     tags: ['Next.js', 'PostgreSQL', 'AWS S3', 'Tailwind CSS'],
-    gradient: 'from-slate-600 to-gray-700',
+    accent: 'bg-slate-200',
     result: '80% less manual reporting',
     duration: '8 weeks',
   },
@@ -141,7 +141,7 @@ const projects = [
     description:
       'Doctor appointment booking app with video consultations, digital prescriptions, health record management, and reminders.',
     tags: ['React Native', 'Node.js', 'AWS', 'WebRTC'],
-    gradient: 'from-blue-500 to-cyan-600',
+    accent: 'bg-slate-200',
     result: '10,000+ downloads in 3 months',
     duration: '10 weeks',
   },
@@ -153,7 +153,7 @@ const projects = [
     description:
       'Personal fitness app with customised workout plans, progress charts, diet log, trainer chat, and subscription billing.',
     tags: ['Flutter', 'Firebase', 'ML Kit', 'Stripe'],
-    gradient: 'from-emerald-500 to-green-600',
+    accent: 'bg-slate-200',
     result: '4.8★ rating on Play Store',
     duration: '12 weeks',
   },
@@ -165,7 +165,7 @@ const projects = [
     description:
       'End-to-end travel booking app covering flights, hotels, and tour packages with dynamic pricing and instant confirmations.',
     tags: ['React Native', 'Node.js', 'MongoDB', 'Razorpay'],
-    gradient: 'from-teal-500 to-cyan-600',
+    accent: 'bg-slate-200',
     result: '5× bookings in 2 months',
     duration: '14 weeks',
   },
@@ -177,7 +177,7 @@ const projects = [
     description:
       '360° social media push — Instagram Reels strategy, influencer partnerships, Meta Ads, and weekly analytics reporting.',
     tags: ['Instagram Ads', 'Meta Ads', 'Influencer', 'Analytics'],
-    gradient: 'from-violet-500 to-purple-600',
+    accent: 'bg-slate-200',
     result: '300% growth in followers',
     duration: '3 months',
   },
@@ -189,7 +189,7 @@ const projects = [
     description:
       'Full-stack growth via Google Ads, local SEO, food-delivery platform optimisation, and social media content calendar.',
     tags: ['Google Ads', 'SEO', 'Content', 'Email Marketing'],
-    gradient: 'from-indigo-500 to-blue-600',
+    accent: 'bg-slate-200',
     result: '200% increase in orders',
     duration: '4 months',
   },
@@ -201,7 +201,7 @@ const projects = [
     description:
       'Brand launch campaign combining influencer seeding, paid ads, email funnels, and WhatsApp broadcast marketing.',
     tags: ['Influencer', 'Email', 'WhatsApp', 'Meta Ads'],
-    gradient: 'from-fuchsia-500 to-pink-600',
+    accent: 'bg-slate-200',
     result: '₹8L revenue in launch month',
     duration: '2 months',
   },
@@ -217,22 +217,18 @@ export default function Portfolio() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* ── Hero ─────────────────────────────────────────── */}
-      <section className="relative bg-hero text-white py-24 overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -top-40 -right-40 w-[400px] h-[400px] bg-rose-600 rounded-full blur-3xl opacity-20" />
-          <div className="absolute -bottom-40 -left-40 w-[400px] h-[400px] bg-violet-700 rounded-full blur-3xl opacity-20" />
-        </div>
+      <section className="relative bg-white text-slate-950 py-24 overflow-hidden border-b border-slate-100">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="inline-block bg-white/10 border border-white/15 text-gray-200 text-xs font-semibold px-4 py-1.5 rounded-full mb-6 uppercase tracking-widest">
+          <span className="inline-block bg-brand-50 border border-brand-100 text-brand-700 text-xs font-semibold px-4 py-1.5 rounded-full mb-6 uppercase tracking-widest">
             Our Portfolio
           </span>
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+          <h1 className="text-3xl md:text-4xl font-medium mb-6">
             Work That{' '}
-            <span className="bg-gradient-to-r from-pink-300 to-violet-400 bg-clip-text text-transparent">
+            <span className="text-brand-700">
               Speaks for Itself
             </span>
           </h1>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto text-gray-300 leading-relaxed">
+          <p className="text-lg md:text-xl max-w-2xl mx-auto text-slate-600 leading-relaxed">
             A selection of websites, mobile apps, and marketing campaigns we've
             built for businesses across India.
           </p>
@@ -249,10 +245,10 @@ export default function Portfolio() {
                 key={cat}
                 onClick={() => setActive(cat)}
                 className={cn(
-                  'px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200',
+                  'border px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200',
                   active === cat
-                    ? 'bg-gradient-to-r from-rose-600 to-violet-600 text-white shadow-lg shadow-rose-200'
-                    : 'bg-white text-gray-600 border border-gray-200 hover:border-rose-300 hover:text-rose-600'
+                    ? 'border-brand-500 text-brand-700 bg-white'
+                    : 'bg-white text-gray-600 border border-gray-200 hover:border-brand-300 hover:text-brand-600'
                 )}
               >
                 {cat}
@@ -282,22 +278,18 @@ export default function Portfolio() {
       </section>
 
       {/* ── CTA ──────────────────────────────────────────── */}
-      <section className="py-20 bg-hero text-white relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-80 h-80 bg-rose-600 rounded-full blur-3xl opacity-15" />
-          <div className="absolute bottom-0 left-0 w-80 h-80 bg-violet-700 rounded-full blur-3xl opacity-15" />
-        </div>
+      <section className="py-20 bg-white text-slate-950 relative overflow-hidden border-t border-slate-100">
         <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-5">
+          <h2 className="text-2xl md:text-3xl font-medium mb-5">
             Like What You See?
           </h2>
-          <p className="text-gray-300 text-lg mb-8">
+          <p className="text-slate-600 text-lg mb-8">
             Let&apos;s build something just as impressive for your business.
             Get a free quote today.
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center space-x-2 bg-gradient-to-r from-rose-600 to-violet-600 text-white px-8 py-4 rounded-full text-base font-semibold hover:shadow-2xl hover:shadow-rose-500/40 hover:scale-105 transition-all duration-300"
+            className="inline-flex items-center space-x-2 border border-[#f58220] bg-white text-gray-900 px-8 py-4 rounded-full text-base font-semibold hover:text-[#f58220] transition-all duration-300"
           >
             <span>Start Your Project</span>
             <ArrowRight className="h-4 w-4" />

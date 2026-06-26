@@ -10,7 +10,7 @@
     --card-foreground: 222 47% 11%;
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
-    --primary: 333 100% 43%;
+    --primary: 209 63% 22%;
     --primary-foreground: 0 0% 100%;
     --secondary: 240 5% 96%;
     --secondary-foreground: 222 47% 11%;
@@ -22,10 +22,10 @@
     --destructive-foreground: 0 0% 98%;
     --border: 240 6% 90%;
     --input: 240 6% 90%;
-    --ring: 333 100% 43%;
-    --chart-1: 333 100% 43%;
-    --chart-2: 271 91% 65%;
-    --chart-3: 197 37% 24%;
+    --ring: 194 61% 72%;
+    --chart-1: 209 63% 22%;
+    --chart-2: 194 61% 72%;
+    --chart-3: 208 65% 39%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.75rem;
@@ -37,7 +37,7 @@
     --card-foreground: 210 40% 98%;
     --popover: 222 47% 6%;
     --popover-foreground: 210 40% 98%;
-    --primary: 333 90% 55%;
+    --primary: 194 61% 72%;
     --primary-foreground: 0 0% 100%;
     --secondary: 217 33% 17%;
     --secondary-foreground: 210 40% 98%;
@@ -49,10 +49,10 @@
     --destructive-foreground: 210 40% 98%;
     --border: 217 33% 17%;
     --input: 217 33% 17%;
-    --ring: 333 90% 55%;
-    --chart-1: 333 90% 55%;
-    --chart-2: 271 91% 65%;
-    --chart-3: 30 80% 55%;
+    --ring: 194 61% 72%;
+    --chart-1: 194 61% 72%;
+    --chart-2: 209 63% 22%;
+    --chart-3: 208 65% 39%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
@@ -64,6 +64,7 @@
   }
   body {
     @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
   html {
     scroll-behavior: smooth;
@@ -72,12 +73,12 @@
 
 @layer utilities {
   .text-gradient {
-    @apply bg-gradient-to-r from-rose-600 to-violet-600 bg-clip-text text-transparent;
+    @apply text-brand-700;
   }
   .bg-hero {
-    background: linear-gradient(135deg, #c2185b 0%, #7c3aed 100%);
+    background: #153a5b;
   }
   .bg-hero-light {
-    background: linear-gradient(135deg, #fdf2f8 0%, #f5f3ff 50%, #eff6ff 100%);
+    background: #f7fbfc;
   }
 }

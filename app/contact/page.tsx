@@ -59,18 +59,18 @@ function ContactForm() {
     <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
       {/* Form — 3 cols */}
       <div className="lg:col-span-3 bg-white rounded-3xl shadow-sm border border-gray-100 p-8 md:p-10">
-        <h2 className="text-2xl font-bold text-gray-900 mb-2">Send Us a Message</h2>
+        <h2 className="text-xl font-medium text-gray-900 mb-2">Send Us a Message</h2>
         <p className="text-gray-500 text-sm mb-8">
           Fill in the form and we&apos;ll get back to you within 24 hours.
         </p>
 
         {/* Status banners */}
         {status === 'success' && (
-          <div className="mb-6 p-4 bg-emerald-50 border border-emerald-200 rounded-2xl flex items-start space-x-3">
-            <div className="w-5 h-5 bg-emerald-500 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+          <div className="mb-6 p-4 bg-brand-50 border border-brand-200 rounded-2xl flex items-start space-x-3">
+            <div className="w-5 h-5 bg-brand-500 rounded-full flex items-center justify-center shrink-0 mt-0.5">
               <span className="text-white text-xs font-bold">✓</span>
             </div>
-            <p className="text-emerald-700 text-sm font-medium">
+            <p className="text-brand-700 text-sm font-medium">
               Thanks for reaching out! We&apos;ll get back to you shortly.
             </p>
           </div>
@@ -83,8 +83,8 @@ function ContactForm() {
           </div>
         )}
         {status === 'Sending...' && (
-          <div className="mb-6 p-4 bg-rose-50 border border-rose-200 rounded-2xl">
-            <p className="text-rose-600 text-sm font-medium">Sending your message…</p>
+          <div className="mb-6 p-4 bg-brand-50 border border-brand-200 rounded-2xl">
+            <p className="text-brand-600 text-sm font-medium">Sending your message…</p>
           </div>
         )}
 
@@ -102,7 +102,7 @@ function ContactForm() {
                 onChange={handleChange}
                 required
                 placeholder="Your full name"
-                className="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all duration-200 outline-none"
+                className="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all duration-200 outline-none"
               />
             </div>
             <div>
@@ -116,7 +116,7 @@ function ContactForm() {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="your@email.com"
-                className="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all duration-200 outline-none"
+                className="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all duration-200 outline-none"
               />
             </div>
           </div>
@@ -133,7 +133,7 @@ function ContactForm() {
               onChange={handleChange}
               required
               placeholder="+91 98765 43210"
-              className="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all duration-200 outline-none"
+              className="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all duration-200 outline-none"
             />
           </div>
 
@@ -147,7 +147,7 @@ function ContactForm() {
               value={formData.subject}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all duration-200 outline-none bg-white text-gray-700"
+              className="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all duration-200 outline-none bg-white text-gray-700"
             >
               <option value="">Select a service</option>
               <option value="website">Website Development</option>
@@ -170,14 +170,14 @@ function ContactForm() {
               required
               rows={5}
               placeholder="Tell us about your project — what you need, your budget, and timeline if you have one…"
-              className="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all duration-200 outline-none resize-none"
+              className="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all duration-200 outline-none resize-none"
             />
           </div>
 
           <button
             type="submit"
             disabled={status === 'Sending...'}
-            className="w-full flex items-center justify-center space-x-2 bg-gradient-to-r from-rose-600 to-violet-600 text-white py-4 rounded-xl font-semibold text-sm hover:shadow-lg hover:shadow-rose-200 hover:scale-[1.02] transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed disabled:scale-100"
+            className="w-full flex items-center justify-center space-x-2 border border-[#f58220] bg-white text-gray-900 py-4 rounded-xl font-semibold text-sm hover:text-[#f58220] transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
           >
             <Send className="h-4 w-4" />
             <span>Send Message</span>
@@ -189,38 +189,38 @@ function ContactForm() {
       <div className="lg:col-span-2 space-y-6">
         {/* Contact details */}
         <div className="bg-white rounded-3xl shadow-sm border border-gray-100 p-8">
-          <h3 className="text-xl font-bold text-gray-900 mb-6">Get In Touch</h3>
+          <h3 className="text-lg font-semibold text-gray-900 mb-6">Get In Touch</h3>
           <div className="space-y-5">
             <a
               href="mailto:beglobal025@gmail.com"
               className="flex items-center space-x-4 group"
             >
-              <div className="w-11 h-11 bg-rose-50 group-hover:bg-rose-100 rounded-xl flex items-center justify-center transition-colors duration-200">
-                <Mail className="h-5 w-5 text-rose-600" />
+              <div className="w-11 h-11 bg-brand-50 group-hover:bg-brand-100 rounded-xl flex items-center justify-center transition-colors duration-200">
+                <Mail className="h-5 w-5 text-brand-600" />
               </div>
               <div>
                 <div className="text-xs text-gray-400 font-medium mb-0.5">Email</div>
-                <div className="text-sm font-semibold text-gray-900 group-hover:text-rose-600 transition-colors duration-200">
+                <div className="text-sm font-semibold text-gray-900 group-hover:text-brand-600 transition-colors duration-200">
                   beglobal025@gmail.com
                 </div>
               </div>
             </a>
 
             <a href="tel:7740055607" className="flex items-center space-x-4 group">
-              <div className="w-11 h-11 bg-emerald-50 group-hover:bg-emerald-100 rounded-xl flex items-center justify-center transition-colors duration-200">
-                <Phone className="h-5 w-5 text-emerald-600" />
+              <div className="w-11 h-11 bg-brand-50 group-hover:bg-brand-100 rounded-xl flex items-center justify-center transition-colors duration-200">
+                <Phone className="h-5 w-5 text-brand-600" />
               </div>
               <div>
                 <div className="text-xs text-gray-400 font-medium mb-0.5">Phone / WhatsApp</div>
-                <div className="text-sm font-semibold text-gray-900 group-hover:text-emerald-600 transition-colors duration-200">
+                <div className="text-sm font-semibold text-gray-900 group-hover:text-brand-600 transition-colors duration-200">
                   +91 90410 78035
                 </div>
               </div>
             </a>
 
             <div className="flex items-center space-x-4">
-              <div className="w-11 h-11 bg-amber-50 rounded-xl flex items-center justify-center">
-                <Clock className="h-5 w-5 text-amber-600" />
+              <div className="w-11 h-11 bg-brand-50 rounded-xl flex items-center justify-center">
+                <Clock className="h-5 w-5 text-brand-600" />
               </div>
               <div>
                 <div className="text-xs text-gray-400 font-medium mb-0.5">Response Time</div>
@@ -234,7 +234,7 @@ function ContactForm() {
             href="https://wa.me/917740055607"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-6 flex items-center justify-center space-x-2 w-full bg-[#25D366] text-white py-3.5 rounded-xl font-semibold text-sm hover:bg-[#20BD5A] transition-colors duration-200"
+            className="mt-6 flex items-center justify-center space-x-2 w-full border border-brand-300 bg-white text-gray-900 py-3.5 rounded-xl font-semibold text-sm hover:border-brand-500 hover:text-brand-700 transition-colors duration-200"
           >
             <MessageCircle className="h-4 w-4" />
             <span>Chat on WhatsApp</span>
@@ -242,8 +242,8 @@ function ContactForm() {
         </div>
 
         {/* Quick stats */}
-        <div className="bg-gradient-to-br from-slate-950 to-indigo-950 rounded-3xl p-8 text-white">
-          <h3 className="text-lg font-bold mb-6">Why Businesses Choose Us</h3>
+        <div className="bg-white border border-slate-200 rounded-3xl p-8 text-slate-950">
+          <h3 className="text-base font-semibold mb-6">Why Businesses Choose Us</h3>
           <div className="grid grid-cols-2 gap-5">
             {[
               { value: '24h', label: 'Response time' },
@@ -251,11 +251,11 @@ function ContactForm() {
               { value: '5★', label: 'Average rating' },
               { value: '200+', label: 'Projects done' },
             ].map((s) => (
-              <div key={s.label} className="text-center bg-white/5 rounded-2xl p-4 border border-white/10">
-                <div className="text-2xl font-bold bg-gradient-to-r from-rose-400 to-violet-400 bg-clip-text text-transparent mb-1">
+              <div key={s.label} className="text-center bg-white rounded-2xl p-4 border border-slate-200">
+                <div className="text-xl font-semibold text-brand-700 mb-1">
                   {s.value}
                 </div>
-                <div className="text-gray-400 text-xs">{s.label}</div>
+                <div className="text-slate-500 text-xs">{s.label}</div>
               </div>
             ))}
           </div>
@@ -288,22 +288,18 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* ── Hero ─────────────────────────────────────────── */}
-      <section className="relative bg-hero text-white py-20 overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -top-40 -right-40 w-[400px] h-[400px] bg-rose-600 rounded-full blur-3xl opacity-20" />
-          <div className="absolute -bottom-40 -left-40 w-[400px] h-[400px] bg-violet-700 rounded-full blur-3xl opacity-20" />
-        </div>
+      <section className="relative bg-white text-slate-950 py-20 overflow-hidden border-b border-slate-100">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="inline-block bg-white/10 border border-white/15 text-gray-200 text-xs font-semibold px-4 py-1.5 rounded-full mb-6 uppercase tracking-widest">
+          <span className="inline-block bg-brand-50 border border-brand-100 text-brand-700 text-xs font-semibold px-4 py-1.5 rounded-full mb-6 uppercase tracking-widest">
             Contact Us
           </span>
-          <h1 className="text-5xl md:text-6xl font-bold mb-5">
+          <h1 className="text-3xl md:text-4xl font-medium mb-5">
             Let&apos;s Build{' '}
-            <span className="bg-gradient-to-r from-rose-400 to-violet-400 bg-clip-text text-transparent">
+            <span className="text-brand-700">
               Something Great
             </span>
           </h1>
-          <p className="text-lg text-gray-300 max-w-xl mx-auto">
+          <p className="text-lg text-slate-600 max-w-xl mx-auto">
             Tell us about your project and get a free quote within 24 hours.
             No commitment, no pressure.
           </p>
@@ -315,7 +311,7 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Suspense fallback={
             <div className="flex items-center justify-center py-20">
-              <div className="w-8 h-8 border-4 border-rose-600 border-t-transparent rounded-full animate-spin" />
+              <div className="w-8 h-8 border-4 border-brand-600 border-t-transparent rounded-full animate-spin" />
             </div>
           }>
             <ContactForm />
@@ -327,16 +323,16 @@ export default function Contact() {
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <span className="text-rose-600 font-semibold text-xs uppercase tracking-widest">FAQ</span>
-            <h2 className="text-3xl font-bold text-gray-900 mt-2 mb-3">Frequently Asked Questions</h2>
+            <span className="text-brand-600 font-semibold text-xs uppercase tracking-widest">FAQ</span>
+            <h2 className="text-xl md:text-2xl font-medium text-gray-900 mt-2 mb-3">Frequently Asked Questions</h2>
             <p className="text-gray-500">Quick answers to common questions about working with us.</p>
           </div>
 
           <div className="space-y-4">
             {faqs.map((faq, i) => (
-              <div key={i} className="bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:border-rose-100 transition-colors duration-200">
-                <h3 className="font-bold text-gray-900 mb-2 flex items-start space-x-2">
-                  <span className="text-rose-600 shrink-0">Q.</span>
+              <div key={i} className="bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:border-brand-100 transition-colors duration-200">
+                <h3 className="font-semibold text-gray-900 mb-2 flex items-start space-x-2">
+                  <span className="text-brand-600 shrink-0">Q.</span>
                   <span>{faq.q}</span>
                 </h3>
                 <p className="text-gray-500 text-sm leading-relaxed pl-5">{faq.a}</p>
@@ -348,7 +344,7 @@ export default function Contact() {
             <p className="text-gray-500 text-sm mb-4">Still have questions?</p>
             <a
               href="mailto:beglobal025@gmail.com"
-              className="inline-flex items-center space-x-2 bg-gradient-to-r from-rose-600 to-violet-600 text-white px-6 py-3 rounded-full text-sm font-semibold hover:shadow-lg hover:scale-105 transition-all duration-200"
+              className="inline-flex items-center space-x-2 border border-brand-300 bg-white text-gray-900 px-6 py-3 rounded-full text-sm font-semibold hover:border-brand-500 hover:text-brand-700 transition-all duration-200"
             >
               <Mail className="h-4 w-4" />
               <span>Email Us Directly</span>

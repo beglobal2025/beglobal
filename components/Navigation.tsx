@@ -20,21 +20,21 @@ export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
+    <header className="bg-white/95 backdrop-blur border-b border-slate-200 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-[72px]">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group" onClick={() => setIsMenuOpen(false)}>
             <Image
-              src="/BeGlobalLogo.svg"
+              src="/beglobal-logo.png"
               alt="BeGlobal"
               width={40}
               height={40}
               className="h-10 w-10 object-contain"
               priority
             />
-            <span className="text-xl font-bold">
-              <span className="text-rose-600">Be</span><span className="text-violet-600">Global</span>
+            <span className="text-xl font-extrabold tracking-tight">
+              <span className="text-[#153A5B]">Be</span><span className="text-[#8CCFE3]">Global</span>
             </span>
           </Link>
 
@@ -45,10 +45,10 @@ export default function Navigation() {
                 key={item.name}
                 href={item.href}
                 className={cn(
-                  'px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200',
+                  'border-b-2 px-4 py-2 text-sm font-semibold transition-all duration-200',
                   pathname === item.href
-                    ? 'text-rose-600 bg-rose-50 font-semibold'
-                    : 'text-gray-600 hover:text-rose-600 hover:bg-rose-50'
+                    ? 'border-brand-500 text-brand-700 font-semibold'
+                    : 'border-transparent text-gray-700 hover:border-brand-300 hover:text-brand-700'
                 )}
               >
                 {item.name}
@@ -56,7 +56,7 @@ export default function Navigation() {
             ))}
             <Link
               href="/contact"
-              className="ml-3 flex items-center space-x-1.5 bg-gradient-to-r from-rose-600 to-violet-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:shadow-lg hover:shadow-rose-200 hover:scale-105 transition-all duration-200"
+              className="ml-3 flex items-center space-x-1.5 border border-[#f58220] bg-white text-gray-900 px-5 py-2.5 rounded-full text-sm font-semibold hover:text-[#f58220] transition-all duration-200"
             >
               <span>Get Free Quote</span>
               <ArrowRight className="h-3.5 w-3.5" />
@@ -66,7 +66,7 @@ export default function Navigation() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-xl text-gray-600 hover:text-rose-600 hover:bg-rose-50 transition-colors duration-200"
+            className="md:hidden p-2 rounded-md text-slate-600 hover:text-brand-700 hover:bg-slate-50 transition-colors duration-200"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -76,7 +76,7 @@ export default function Navigation() {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden border-t border-gray-100 bg-white shadow-xl">
+        <div className="md:hidden border-t border-slate-200 bg-white shadow-xl">
           <div className="px-4 py-4 space-y-1">
             {navItems.map((item) => (
               <Link
@@ -84,10 +84,10 @@ export default function Navigation() {
                 href={item.href}
                 onClick={() => setIsMenuOpen(false)}
                 className={cn(
-                  'flex items-center px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200',
+                  'flex items-center border-l-2 px-4 py-3 text-sm font-semibold transition-all duration-200',
                   pathname === item.href
-                    ? 'text-rose-600 bg-rose-50 font-semibold'
-                    : 'text-gray-600 hover:text-rose-600 hover:bg-rose-50'
+                    ? 'border-brand-500 text-brand-700 bg-white font-semibold'
+                    : 'border-transparent text-gray-700 hover:border-brand-300 hover:text-brand-700 hover:bg-white'
                 )}
               >
                 {item.name}
@@ -96,7 +96,7 @@ export default function Navigation() {
             <Link
               href="/contact"
               onClick={() => setIsMenuOpen(false)}
-              className="flex items-center justify-center space-x-1.5 mt-3 bg-gradient-to-r from-rose-600 to-violet-600 text-white px-4 py-3 rounded-xl text-sm font-semibold"
+              className="flex items-center justify-center space-x-1.5 mt-3 border border-[#f58220] bg-white text-gray-900 px-4 py-3 rounded-xl text-sm font-semibold"
             >
               <span>Get Free Quote</span>
               <ArrowRight className="h-4 w-4" />
